@@ -1,25 +1,44 @@
-/* GANTI FILE: style.css */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#fff;
 color:#222;
 overflow-x:hidden;
 }
 
+/* LOADING */
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0b7a39,#0f9d58);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+color:white;
+font-size:24px;
+font-weight:bold;
+}
+
 /* HEADER */
 header{
-background:linear-gradient(90deg,#0b7a39,#0f9d58);
-position:sticky;
+position:fixed;
 top:0;
+left:0;
+width:100%;
 z-index:999;
-box-shadow:0 5px 15px rgba(0,0,0,0.15);
+background:rgba(0,0,0,0.18);
+backdrop-filter:blur(10px);
+transition:0.3s;
 }
 
 .navbar{
@@ -28,8 +47,7 @@ margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 18px;
-flex-wrap:wrap;
+padding:14px 20px;
 }
 
 .logo-area{
@@ -49,11 +67,10 @@ background:white;
 padding:4px;
 }
 
-/* MENU DESKTOP */
 .menu{
 display:flex;
+gap:15px;
 list-style:none;
-gap:16px;
 }
 
 .menu li a{
@@ -61,7 +78,7 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 padding:8px 12px;
-border-radius:8px;
+border-radius:10px;
 transition:0.3s;
 }
 
@@ -75,56 +92,42 @@ background:rgba(255,255,255,0.15);
 .navbar{
 flex-direction:column;
 gap:12px;
-text-align:center;
-}
-
-.logo-area{
-font-size:18px;
-justify-content:center;
-}
-
-.logo{
-width:42px;
-height:42px;
 }
 
 .menu{
-width:100%;
 display:grid;
 grid-template-columns:repeat(2,1fr);
+width:100%;
 gap:8px;
-margin-top:5px;
 }
 
 .menu li a{
 display:block;
-font-size:16px;
-padding:10px;
+text-align:center;
 background:rgba(255,255,255,0.08);
+font-size:15px;
+}
+
+.logo-area{
+font-size:18px;
 }
 
 }
 
 /* HERO */
-.hero,
-.hero-spmb,
-.hero-profil,
-.hero-galeri,
-.hero-prestasi,
-.hero-kontak{
-min-height:85vh;
+.hero{
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 padding:30px 20px;
-background-size:cover;
-background-position:center;
 color:white;
 }
 
 .hero-box{
 max-width:800px;
+animation:fadeUp 1.2s ease;
 }
 
 .hero img{
@@ -134,44 +137,30 @@ border-radius:50%;
 background:white;
 padding:6px;
 margin-bottom:18px;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .hero h1{
 font-size:52px;
-margin-bottom:14px;
 line-height:1.2;
-text-shadow:0 3px 10px rgba(0,0,0,0.45);
+margin-bottom:15px;
+text-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
 .hero p{
 font-size:22px;
 line-height:1.6;
-margin-bottom:28px;
-text-shadow:0 2px 8px rgba(0,0,0,0.4);
+margin-bottom:25px;
 }
 
-/* MOBILE HERO */
 @media(max-width:768px){
-
-.hero{
-min-height:78vh;
-padding:25px 18px;
-}
-
-.hero img{
-width:85px;
-height:85px;
-}
 
 .hero h1{
 font-size:34px;
-line-height:1.25;
 }
 
 .hero p{
 font-size:17px;
-line-height:1.7;
 }
 
 }
@@ -179,11 +168,12 @@ line-height:1.7;
 /* BUTTON */
 .btn{
 display:inline-block;
-padding:14px 24px;
+padding:14px 26px;
 border-radius:50px;
-font-weight:bold;
 text-decoration:none;
+font-weight:bold;
 transition:0.3s;
+margin:5px;
 }
 
 .btn-primary{
@@ -197,33 +187,54 @@ color:white;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
 }
 
-/* CONTENT */
-.container{
-max-width:1100px;
-margin:auto;
-padding:50px 20px;
+/* SECTION */
+.info{
+padding:70px 20px;
+text-align:center;
+background:#f7fff8;
 }
 
-.card,
-.box,
-.profil-box,
-.box-kontak,
-.prestasi-box{
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+.info h2{
+font-size:34px;
 margin-bottom:20px;
+color:#0b7a39;
 }
 
+.info p{
+max-width:850px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+}
+
+/* FLOAT WA */
+.wa-float{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#25d366;
+color:white;
+padding:14px 16px;
+border-radius:50%;
+font-size:26px;
+text-decoration:none;
+z-index:999;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
 footer{
-background:#06361b;
+background:#052e16;
 color:white;
 text-align:center;
 padding:25px;
-margin-top:30px;
-font-size:15px;
+}
+
+/* ANIMASI */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
