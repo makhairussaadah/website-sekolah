@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madrasah Aliyah Khairussa'adah Kubu</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+background:linear-gradient(rgba(0,80,40,0.7),rgba(0,60,30,0.8)),
+url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero-box{
+max-width:800px;
+animation:fadeUp 1.5s ease;
+}
+
+.hero img{
+width:120px;
+height:120px;
+border-radius:50%;
+background:white;
+padding:8px;
+margin-bottom:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:20px;
+opacity:0.95;
+margin-bottom:30px;
+}
+
+.btn-group{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#ffd700;
+color:#111;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+border:2px solid white;
+color:white;
+}
+
+.btn-secondary:hover{
+background:white;
+color:#111;
+}
+
+.info{
+padding:70px 20px;
+text-align:center;
+background:#f8fff9;
+}
+
+.info h2{
+font-size:34px;
+margin-bottom:20px;
+color:#0a5a2d;
+}
+
+.info p{
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+color:#444;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:768px){
+.hero h1{font-size:34px;}
+.hero p{font-size:18px;}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo-area">
+<img src="logo.png" class="logo">
+<span>MA Khairussa'adah Kubu</span>
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="spmb.html">SPMB 2026</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="prestasi.html">Prestasi</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-box">
+
+<img src="logo.png">
+
+<h1>Madrasah Aliyah<br>Khairussa'adah Kubu</h1>
+
+<p>
+Madrasah Modern, Islami, Berprestasi dan Siap Mencetak Generasi Masa Depan
+</p>
+
+<div class="btn-group">
+<a href="spmb.html" class="btn btn-primary">Daftar SPMB 2026</a>
+<a href="profil.html" class="btn btn-secondary">Lihat Profil</a>
+</div>
+
+</div>
+</section>
+
+<section class="info">
+<h2>Sambutan Kepala Madrasah</h2>
+
+<p>
+Selamat datang di website resmi Madrasah Aliyah Khairussa'adah Kubu.
+Kami berkomitmen memberikan pendidikan terbaik yang menggabungkan ilmu pengetahuan,
+akhlakul karimah, dan keterampilan masa depan.<br><br>
+
+<b>Fahkrurrezi Umam, S.Pd.</b>
+</p>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

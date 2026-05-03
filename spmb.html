@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPMB 2026 | MA Khairussa'adah Kubu</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.hero-spmb{
+padding:90px 20px;
+text-align:center;
+background:linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
+url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero-spmb h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero-spmb p{
+font-size:20px;
+opacity:0.95;
+}
+
+.countdown{
+margin-top:25px;
+font-size:28px;
+font-weight:bold;
+color:#ffd700;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+margin-bottom:25px;
+}
+
+.list li{
+margin-bottom:12px;
+line-height:1.7;
+}
+
+.wa-btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 28px;
+background:#0f9d58;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+transition:0.3s;
+}
+
+.wa-btn:hover{
+transform:translateY(-3px);
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo-area">
+<img src="logo.png" class="logo">
+<span>MA Khairussa'adah Kubu</span>
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="spmb.html">SPMB 2026</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="prestasi.html">Prestasi</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero-spmb">
+<h1>SPMB 2026</h1>
+<p>Sistem Penerimaan Murid Baru Tahun Ajaran 2026/2027</p>
+
+<div class="countdown" id="countdown">
+Segera Dibuka
+</div>
+</section>
+
+<section class="container">
+
+<div class="box">
+<h2>Jadwal Pendaftaran</h2>
+<ul class="list">
+<li>Pendaftaran Gelombang 1 : Januari 2026</li>
+<li>Gelombang 2 : Maret 2026</li>
+<li>Pengumuman : Juni 2026</li>
+<li>Masuk Sekolah : Juli 2026</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>Persyaratan</h2>
+<ul class="list">
+<li>Fotocopy KK</li>
+<li>Fotocopy Akta Kelahiran</li>
+<li>Fotocopy Ijazah/SKL SMP/MTs</li>
+<li>Pas Foto 3x4 (2 lembar)</li>
+<li>Mengisi Formulir Pendaftaran</li>
+</ul>
+</div>
+
+<div class="box" style="text-align:center;">
+<h2>Daftar Sekarang</h2>
+<p>Hubungi Panitia Pendaftaran via WhatsApp</p>
+
+<a href="https://wa.me/6281233246744" class="wa-btn" target="_blank">
+Chat WhatsApp
+</a>
+</div>
+
+</section>
+
+<footer>
+© 2026 MA Khairussa'adah Kubu
+</footer>
+
+<script>
+const targetDate = new Date("Jan 1, 2026 00:00:00").getTime();
+
+setInterval(function(){
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+if(distance > 0){
+const days = Math.floor(distance/(1000*60*60*24));
+document.getElementById("countdown").innerHTML =
+days + " Hari Lagi Dibuka";
+}
+},1000);
+</script>
+
+</body>
+</html>

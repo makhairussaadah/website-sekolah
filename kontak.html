@@ -1,0 +1,149 @@
+<!-- FILE: kontak.html -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak | MA Khairussa'adah Kubu</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.hero-kontak{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
+url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero-kontak h1{
+font-size:46px;
+margin-bottom:15px;
+}
+
+.kontak-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+padding:20px 0;
+}
+
+.box-kontak{
+background:white;
+padding:30px;
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.box-kontak h2{
+margin-bottom:18px;
+}
+
+.info-line{
+margin-bottom:14px;
+line-height:1.8;
+}
+
+.wa-btn{
+display:inline-block;
+margin-top:15px;
+padding:14px 24px;
+background:#0f9d58;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.wa-btn:hover{
+transform:translateY(-4px);
+}
+
+iframe{
+width:100%;
+height:350px;
+border:none;
+border-radius:18px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo-area">
+<img src="logo.png" class="logo">
+<span>MA Khairussa'adah Kubu</span>
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="spmb.html">SPMB 2026</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="prestasi.html">Prestasi</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero-kontak">
+<h1>Hubungi Kami</h1>
+<p>Informasi Kontak Resmi Madrasah</p>
+</section>
+
+<section class="container">
+
+<div class="kontak-grid">
+
+<div class="box-kontak">
+<h2>Informasi Sekolah</h2>
+
+<div class="info-line">
+<b>Alamat:</b><br>
+Dusun Setia Usaha, RT.004/RW.004,<br>
+Desa Kubu, Kec. Kubu,<br>
+Kab. Kubu Raya
+</div>
+
+<div class="info-line">
+<b>Kepala Madrasah:</b><br>
+Fahkrurrezi Umam, S.Pd.
+</div>
+
+<div class="info-line">
+<b>WhatsApp:</b><br>
++62 812-3324-6744
+</div>
+
+<a href="https://wa.me/6281233246744" target="_blank" class="wa-btn">
+Chat WhatsApp
+</a>
+
+</div>
+
+<div class="box-kontak">
+<h2>Lokasi Maps</h2>
+
+<iframe 
+src="https://www.google.com/maps?q=Desa%20Kubu%20Kubu%20Raya&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 MA Khairussa'adah Kubu
+</footer>
+
+</body>
+</html>

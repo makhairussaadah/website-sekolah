@@ -1,0 +1,131 @@
+<!-- FILE: prestasi.html -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestasi | MA Khairussa'adah Kubu</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.hero-prestasi{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
+url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero-prestasi h1{
+font-size:46px;
+margin-bottom:15px;
+}
+
+.prestasi-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+padding:20px 0;
+}
+
+.prestasi-box{
+background:white;
+padding:28px;
+border-radius:22px;
+box-shadow:0 10px 28px rgba(0,0,0,0.08);
+transition:0.3s;
+border-top:5px solid #0b7a39;
+}
+
+.prestasi-box:hover{
+transform:translateY(-8px);
+}
+
+.icon{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.tahun{
+display:inline-block;
+margin-top:10px;
+padding:6px 14px;
+background:#e9fff0;
+color:#0b7a39;
+border-radius:50px;
+font-weight:bold;
+font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo-area">
+<img src="logo.png" class="logo">
+<span>MA Khairussa'adah Kubu</span>
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Beranda</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="spmb.html">SPMB 2026</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="prestasi.html">Prestasi</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero-prestasi">
+<h1>Prestasi Madrasah</h1>
+<p>Pencapaian Siswa dan Sekolah yang Membanggakan</p>
+</section>
+
+<section class="container">
+
+<div class="prestasi-grid">
+
+<div class="prestasi-box">
+<div class="icon">🏆</div>
+<h3>Juara Lomba Cerdas Cermat</h3>
+<p>Meraih juara tingkat kecamatan dalam bidang akademik.</p>
+<span class="tahun">2025</span>
+</div>
+
+<div class="prestasi-box">
+<div class="icon">🥇</div>
+<h3>Juara MTQ Pelajar</h3>
+<p>Siswa berhasil meraih prestasi pada ajang MTQ tingkat kabupaten.</p>
+<span class="tahun">2025</span>
+</div>
+
+<div class="prestasi-box">
+<div class="icon">📚</div>
+<h3>Kelulusan 100%</h3>
+<p>Tingkat kelulusan siswa sangat baik setiap tahun ajaran.</p>
+<span class="tahun">2024</span>
+</div>
+
+<div class="prestasi-box">
+<div class="icon">⚽</div>
+<h3>Juara Olahraga Antar Sekolah</h3>
+<p>Berprestasi di bidang non akademik dan olahraga.</p>
+<span class="tahun">2024</span>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 MA Khairussa'adah Kubu
+</footer>
+
+</body>
+</html>
