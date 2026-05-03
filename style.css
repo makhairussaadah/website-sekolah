@@ -1,12 +1,33 @@
-/* TAMBAHKAN / GANTI di style.css */
+/* ===============================
+   style.css FULL PREMIUM
+   MA Khairussa'adah Kubu
+================================= */
 
-/* ===== HEADER PREMIUM ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f5f7f6;
+color:#222;
+line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+
 header{
 position:sticky;
 top:0;
 z-index:999;
-background:linear-gradient(90deg,#0b7a39,#0f9d58);
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
+background:linear-gradient(90deg,#087a38,#12a54f);
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
 .navbar{
@@ -16,102 +37,336 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:14px 18px;
+position:relative;
 }
 
 .logo-area{
 display:flex;
 align-items:center;
-gap:10px;
-color:white;
-font-weight:bold;
-font-size:18px;
+gap:12px;
+color:#fff;
+font-weight:700;
+font-size:20px;
 }
 
 .logo{
-width:48px;
-height:48px;
+width:52px;
+height:52px;
 border-radius:50%;
-background:white;
+background:#fff;
 padding:4px;
+object-fit:contain;
 }
 
-/* MENU DESKTOP */
 .menu{
 display:flex;
 list-style:none;
-gap:14px;
+gap:12px;
 }
 
 .menu li a{
-color:white;
+color:#fff;
 text-decoration:none;
 font-weight:bold;
-padding:8px 12px;
+padding:10px 14px;
 border-radius:10px;
 transition:0.3s;
 }
 
 .menu li a:hover{
-background:rgba(255,255,255,0.18);
+background:rgba(255,255,255,0.16);
 }
 
-/* HAMBURGER */
 .menu-toggle{
 display:none;
-font-size:30px;
-color:white;
+font-size:34px;
+color:#fff;
 cursor:pointer;
+user-select:none;
 }
 
-/* MOBILE */
+/* ================= HERO ================= */
+
+.hero,
+.hero-spmb,
+.hero-profil,
+.hero-galeri,
+.hero-prestasi,
+.hero-kontak{
+min-height:88vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:60px 20px;
+background-size:cover;
+background-position:center;
+color:#fff;
+position:relative;
+}
+
+.hero::before,
+.hero-spmb::before,
+.hero-profil::before,
+.hero-galeri::before,
+.hero-prestasi::before,
+.hero-kontak::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,60,30,0.55);
+}
+
+.hero > *,
+.hero-spmb > *,
+.hero-profil > *,
+.hero-galeri > *,
+.hero-prestasi > *,
+.hero-kontak > *{
+position:relative;
+z-index:2;
+}
+
+.hero img{
+width:130px;
+height:130px;
+border-radius:50%;
+background:#fff;
+padding:8px;
+margin-bottom:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.hero h1,
+.hero-spmb h1,
+.hero-profil h1,
+.hero-galeri h1,
+.hero-prestasi h1,
+.hero-kontak h1{
+font-size:54px;
+line-height:1.15;
+margin-bottom:15px;
+font-weight:800;
+text-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+
+.hero p,
+.hero-spmb p,
+.hero-profil p,
+.hero-galeri p,
+.hero-prestasi p,
+.hero-kontak p{
+font-size:22px;
+max-width:900px;
+opacity:0.98;
+}
+
+/* ================= BUTTON ================= */
+
+.btn,
+.wa-btn{
+display:inline-block;
+padding:15px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+margin:8px;
+}
+
+.btn-primary{
+background:#ffd400;
+color:#111;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+}
+
+.btn-secondary{
+border:2px solid #fff;
+color:#fff;
+}
+
+.btn-secondary:hover{
+background:#fff;
+color:#111;
+}
+
+/* ================= CONTENT ================= */
+
+.container{
+max-width:1150px;
+margin:auto;
+padding:55px 20px;
+}
+
+.box,
+.card,
+.profil-box,
+.box-kontak,
+.prestasi-box{
+background:#fff;
+padding:28px;
+border-radius:24px;
+box-shadow:0 10px 25px rgba(0,0,0,0.07);
+margin-bottom:25px;
+}
+
+h2{
+font-size:34px;
+margin-bottom:18px;
+color:#0a5a2d;
+}
+
+h3{
+font-size:24px;
+margin-bottom:12px;
+}
+
+p{
+font-size:18px;
+margin-bottom:10px;
+}
+
+ul{
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+font-size:18px;
+}
+
+/* ================= GRID ================= */
+
+.gallery,
+.prestasi-grid,
+.kontak-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#06361b;
+color:#fff;
+text-align:center;
+padding:28px 20px;
+margin-top:30px;
+font-size:17px;
+}
+
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
+
+.logo-area{
+font-size:16px;
+max-width:220px;
+line-height:1.2;
+}
+
+.logo{
+width:46px;
+height:46px;
+}
 
 .menu-toggle{
 display:block;
 }
 
 .menu{
+display:none;
 position:absolute;
 top:78px;
 left:0;
 right:0;
-background:rgba(11,122,57,0.97);
+background:rgba(8,122,56,0.98);
 backdrop-filter:blur(10px);
 flex-direction:column;
-text-align:center;
 padding:15px;
 gap:10px;
-display:none;
-animation:turun 0.3s ease;
+box-shadow:0 12px 20px rgba(0,0,0,0.15);
 }
 
 .menu.active{
 display:flex;
+animation:turun 0.25s ease;
 }
 
 .menu li a{
 display:block;
-padding:14px;
 font-size:18px;
-border-radius:14px;
+padding:14px;
+text-align:center;
 background:rgba(255,255,255,0.08);
+border-radius:14px;
+}
+
+.hero,
+.hero-spmb,
+.hero-profil,
+.hero-galeri,
+.hero-prestasi,
+.hero-kontak{
+min-height:82vh;
+padding:40px 18px;
+}
+
+.hero img{
+width:100px;
+height:100px;
+margin-bottom:15px;
+}
+
+.hero h1,
+.hero-spmb h1,
+.hero-profil h1,
+.hero-galeri h1,
+.hero-prestasi h1,
+.hero-kontak h1{
+font-size:34px;
+}
+
+.hero p,
+.hero-spmb p,
+.hero-profil p,
+.hero-galeri p,
+.hero-prestasi p,
+.hero-kontak p{
+font-size:18px;
+}
+
+h2{
+font-size:28px;
+}
+
+p,li{
+font-size:17px;
+}
+
+.btn,
+.wa-btn{
+display:block;
+width:100%;
+max-width:320px;
+margin:10px auto;
+text-align:center;
+}
+
 }
 
 @keyframes turun{
 from{
 opacity:0;
-transform:translateY(-15px);
+transform:translateY(-10px);
 }
 to{
 opacity:1;
 transform:translateY(0);
 }
-}
-
-.logo-area span{
-font-size:16px;
-max-width:180px;
-line-height:1.2;
-}
-
 }
