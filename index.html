@@ -1,4 +1,4 @@
-<!-- GANTI FILE: index.html -->
+<!-- LANGKAH 2 — GANTI FILE: index.html -->
 
 <!DOCTYPE html>
 <html lang="id">
@@ -6,71 +6,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madrasah Aliyah Khairussa'adah Kubu</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
 .hero{
 background:
-linear-gradient(rgba(0,60,30,0.62),rgba(0,60,30,0.72)),
+linear-gradient(rgba(0,60,30,0.55),rgba(0,60,30,0.72)),
 url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80');
 background-size:cover;
 background-position:center;
 }
-
-.info{
-padding:60px 20px;
-background:#f7fff8;
-text-align:center;
-}
-
-.info h2{
-font-size:34px;
-margin-bottom:20px;
-color:#0b7a39;
-}
-
-.info p{
-max-width:850px;
-margin:auto;
-font-size:19px;
-line-height:1.8;
-color:#444;
-}
-
-@media(max-width:768px){
-
-.info{
-padding:45px 18px;
-}
-
-.info h2{
-font-size:28px;
-}
-
-.info p{
-font-size:16px;
-line-height:1.8;
-}
-
-.btn-group{
-display:flex;
-flex-direction:column;
-gap:12px;
-align-items:center;
-}
-
-.btn{
-width:100%;
-max-width:280px;
-text-align:center;
-}
-
-}
 </style>
-
 </head>
+
 <body>
+
+<!-- LOADING -->
+<div id="loader">
+Memuat Website...
+</div>
 
 <header>
 <nav class="navbar">
@@ -83,7 +37,7 @@ text-align:center;
 <ul class="menu">
 <li><a href="index.html">Beranda</a></li>
 <li><a href="profil.html">Profil</a></li>
-<li><a href="spmb.html">SPMB 2026</a></li>
+<li><a href="spmb.html">SPMB</a></li>
 <li><a href="galeri.html">Galeri</a></li>
 <li><a href="prestasi.html">Prestasi</a></li>
 <li><a href="kontak.html">Kontak</a></li>
@@ -96,7 +50,7 @@ text-align:center;
 
 <div class="hero-box">
 
-<img src="logo.png" alt="Logo Sekolah">
+<img src="logo.png">
 
 <h1>
 Madrasah Aliyah<br>
@@ -104,14 +58,17 @@ Khairussa'adah Kubu
 </h1>
 
 <p>
-Madrasah Modern, Islami, Berprestasi dan Siap
-Mencetak Generasi Masa Depan
+Madrasah Modern, Islami, Berprestasi dan
+Siap Mencetak Generasi Masa Depan
 </p>
 
-<div class="btn-group">
-<a href="spmb.html" class="btn btn-primary">Daftar SPMB 2026</a>
-<a href="profil.html" class="btn btn-secondary">Lihat Profil</a>
-</div>
+<a href="spmb.html" class="btn btn-primary">
+Daftar SPMB 2026
+</a>
+
+<a href="profil.html" class="btn btn-secondary">
+Lihat Profil
+</a>
 
 </div>
 
@@ -124,9 +81,8 @@ Mencetak Generasi Masa Depan
 <p>
 Selamat datang di website resmi
 Madrasah Aliyah Khairussa'adah Kubu.
-Kami berkomitmen menghadirkan pendidikan
-berkualitas yang memadukan ilmu pengetahuan,
-akhlakul karimah, dan kesiapan masa depan.
+Kami berkomitmen memberikan pendidikan terbaik
+berbasis ilmu dan akhlak mulia.
 <br><br>
 
 <b>Fahkrurrezi Umam, S.Pd.</b>
@@ -137,6 +93,11 @@ akhlakul karimah, dan kesiapan masa depan.
 <footer>
 © 2026 MA Khairussa'adah Kubu
 </footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/6281233246744" class="wa-float" target="_blank">
+☎
+</a>
 
 <script src="script.js"></script>
 
