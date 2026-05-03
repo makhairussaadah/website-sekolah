@@ -1,75 +1,293 @@
-// FILE: script.js
-// TINGGAL TEMPEL
+/* FILE: style.css */
 
-function toggleMenu(){
-const menu = document.getElementById("navMenu");
-menu.classList.toggle("active");
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* otomatis tutup menu saat klik link di HP */
-document.querySelectorAll("#navMenu a").forEach(link=>{
-link.addEventListener("click",()=>{
-document.getElementById("navMenu").classList.remove("active");
-});
-});
-
-/* navbar shadow saat scroll */
-window.addEventListener("scroll",function(){
-const header = document.querySelector("header");
-
-if(window.scrollY > 30){
-header.style.boxShadow="0 10px 25px rgba(0,0,0,0.18)";
-}else{
-header.style.boxShadow="0 8px 22px rgba(0,0,0,0.12)";
-}
-});
-
-/* animasi angka statistik */
-const stats = document.querySelectorAll(".stat-card h2");
-
-function animateValue(el,targetText){
-
-let isNumber = /^\d+/.test(targetText);
-if(!isNumber) return;
-
-let target = parseInt(targetText);
-let count = 0;
-let speed = Math.ceil(target/40);
-
-let plus = targetText.includes("+") ? "+" : "";
-
-let interval = setInterval(()=>{
-count += speed;
-
-if(count >= target){
-count = target;
-clearInterval(interval);
+body{
+font-family:'Poppins',sans-serif;
+background:#f7f8f7;
+color:#222;
 }
 
-el.innerText = count + plus;
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:999;
+background:rgba(6,60,28,.88);
+backdrop-filter:blur(10px);
+}
 
-},30);
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:14px 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:#fff;
+}
+
+.brand b{
+display:block;
+font-size:17px;
+}
+
+.brand span{
+font-size:13px;
+opacity:.8;
+}
+
+.logo{
+width:50px;
+height:50px;
+background:#fff;
+padding:4px;
+border-radius:14px;
+object-fit:contain;
+}
+
+.menu{
+display:flex;
+gap:10px;
+list-style:none;
+}
+
+.menu a{
+color:#fff;
+text-decoration:none;
+padding:10px 14px;
+border-radius:10px;
+font-weight:600;
+}
+
+.menu a:hover{
+background:rgba(255,255,255,.1);
+}
+
+.menu-btn{
+display:none;
+font-size:32px;
+color:#fff;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+background:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80') center/cover;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px 40px;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,40,18,.72),rgba(0,60,25,.75));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+color:#fff;
+animation:up 1s ease;
+}
+
+.hero-logo{
+width:130px;
+background:rgba(255,255,255,.12);
+padding:14px;
+border-radius:24px;
+margin-bottom:20px;
+backdrop-filter:blur(10px);
+}
+
+.mini-title{
+font-size:15px;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:.9;
+margin-bottom:12px;
+}
+
+.hero h1{
+font-size:58px;
+line-height:1.12;
+margin-bottom:16px;
+font-weight:800;
+}
+
+.hero-text{
+font-size:21px;
+max-width:760px;
+margin:auto;
+margin-bottom:26px;
+opacity:.95;
+}
+
+.hero-action{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:40px;
+text-decoration:none;
+font-weight:700;
+}
+
+.gold{
+background:#ffd54a;
+color:#111;
+}
+
+.white{
+border:2px solid #fff;
+color:#fff;
+}
+
+/* CONTENT */
+
+.wrap{
+max-width:1150px;
+margin:auto;
+padding:70px 20px;
+}
+
+.stats .wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+}
+
+.card{
+background:#fff;
+padding:30px;
+border-radius:24px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+text-align:center;
+}
+
+.card h2{
+font-size:42px;
+color:#0a7a38;
+margin-bottom:8px;
+}
+
+.welcome{
+background:#eef4ef;
+}
+
+.box{
+background:#fff;
+padding:40px;
+border-radius:28px;
+box-shadow:0 10px 28px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.box h2{
+font-size:34px;
+margin-bottom:16px;
+color:#0a7a38;
+}
+
+.box p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:16px;
+}
+
+.box h3{
+font-size:22px;
+}
+
+footer{
+background:#072f18;
+color:#fff;
+text-align:center;
+padding:24px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-btn{
+display:block;
+}
+
+.menu{
+display:none;
+position:absolute;
+top:78px;
+left:0;
+right:0;
+background:#0b6d35;
+flex-direction:column;
+padding:14px;
+}
+
+.menu.show{
+display:flex;
+}
+
+.hero-logo{
+width:95px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero-text{
+font-size:17px;
+}
+
+.btn{
+width:100%;
+max-width:290px;
+}
+
+.box{
+padding:26px;
+}
+
+.box h2{
+font-size:28px;
+}
 
 }
 
-let started = false;
+/* ANIMASI */
 
-window.addEventListener("scroll",function(){
-
-const section = document.querySelector(".stats-section");
-
-if(!section) return;
-
-const top = section.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100 && !started){
-
-started = true;
-
-stats.forEach(stat=>{
-animateValue(stat, stat.innerText);
-});
-
+@keyframes up{
+from{
+opacity:0;
+transform:translateY(30px);
 }
-
-});
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
