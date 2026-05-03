@@ -1,381 +1,75 @@
-/* ===============================
-   style.css FINAL PREMIUM
-   MA Khairussa'adah Kubu
-================================= */
+// FILE: script.js
+// TINGGAL TEMPEL
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+function toggleMenu(){
+const menu = document.getElementById("navMenu");
+menu.classList.toggle("active");
 }
 
-html{
-scroll-behavior:smooth;
+/* otomatis tutup menu saat klik link di HP */
+document.querySelectorAll("#navMenu a").forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("navMenu").classList.remove("active");
+});
+});
+
+/* navbar shadow saat scroll */
+window.addEventListener("scroll",function(){
+const header = document.querySelector("header");
+
+if(window.scrollY > 30){
+header.style.boxShadow="0 10px 25px rgba(0,0,0,0.18)";
+}else{
+header.style.boxShadow="0 8px 22px rgba(0,0,0,0.12)";
+}
+});
+
+/* animasi angka statistik */
+const stats = document.querySelectorAll(".stat-card h2");
+
+function animateValue(el,targetText){
+
+let isNumber = /^\d+/.test(targetText);
+if(!isNumber) return;
+
+let target = parseInt(targetText);
+let count = 0;
+let speed = Math.ceil(target/40);
+
+let plus = targetText.includes("+") ? "+" : "";
+
+let interval = setInterval(()=>{
+count += speed;
+
+if(count >= target){
+count = target;
+clearInterval(interval);
 }
 
-body{
-font-family:'Poppins', Arial, Helvetica, sans-serif;
-background:#f5f7f6;
-color:#222;
-line-height:1.6;
-}
+el.innerText = count + plus;
 
-/* ================= HEADER ================= */
-
-header{
-position:sticky;
-top:0;
-z-index:999;
-background:linear-gradient(90deg,#087a38,#12a54f);
-box-shadow:0 8px 20px rgba(0,0,0,0.12);
-}
-
-.navbar{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 18px;
-position:relative;
-}
-
-.logo-area{
-display:flex;
-align-items:center;
-gap:12px;
-color:#fff;
-font-weight:700;
-font-size:19px;
-}
-
-.logo{
-width:52px;
-height:52px;
-padding:4px;
-object-fit:contain;
-background:#fff;
-border-radius:14px;
-box-shadow:0 6px 18px rgba(0,0,0,0.10);
-}
-
-.menu{
-display:flex;
-list-style:none;
-gap:12px;
-}
-
-.menu li a{
-color:#fff;
-text-decoration:none;
-font-weight:600;
-padding:10px 14px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.menu li a:hover{
-background:rgba(255,255,255,0.16);
-}
-
-.menu-toggle{
-display:none;
-font-size:34px;
-color:#fff;
-cursor:pointer;
-user-select:none;
-}
-
-/* ================= HERO ================= */
-
-.hero,
-.hero-spmb,
-.hero-profil,
-.hero-galeri,
-.hero-prestasi,
-.hero-kontak{
-min-height:88vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:60px 20px;
-background-size:cover;
-background-position:center;
-color:#fff;
-position:relative;
-}
-
-.hero::before,
-.hero-spmb::before,
-.hero-profil::before,
-.hero-galeri::before,
-.hero-prestasi::before,
-.hero-kontak::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,60,30,0.55);
-}
-
-.hero > *,
-.hero-spmb > *,
-.hero-profil > *,
-.hero-galeri > *,
-.hero-prestasi > *,
-.hero-kontak > *{
-position:relative;
-z-index:2;
-}
-
-/* LOGO BERANDA TANPA LINGKARAN */
-.hero-logo{
-width:150px;
-height:auto;
-display:block;
-margin:0 auto 22px;
-padding:14px;
-background:rgba(255,255,255,0.10);
-backdrop-filter:blur(8px);
-border-radius:24px;
-box-shadow:0 12px 30px rgba(0,0,0,0.22);
-object-fit:contain;
-}
-
-.hero h1,
-.hero-spmb h1,
-.hero-profil h1,
-.hero-galeri h1,
-.hero-prestasi h1,
-.hero-kontak h1{
-font-size:52px;
-line-height:1.15;
-margin-bottom:15px;
-font-weight:800;
-letter-spacing:-1px;
-text-shadow:0 4px 12px rgba(0,0,0,0.25);
-}
-
-.hero p,
-.hero-spmb p,
-.hero-profil p,
-.hero-galeri p,
-.hero-prestasi p,
-.hero-kontak p{
-font-size:21px;
-max-width:900px;
-opacity:0.98;
-}
-
-/* ================= BUTTON ================= */
-
-.btn,
-.wa-btn{
-display:inline-block;
-padding:15px 30px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-transition:0.3s;
-margin:8px;
-}
-
-.btn-primary{
-background:#ffd400;
-color:#111;
-}
-
-.btn-primary:hover{
-transform:translateY(-4px);
-}
-
-.btn-secondary{
-border:2px solid #fff;
-color:#fff;
-}
-
-.btn-secondary:hover{
-background:#fff;
-color:#111;
-}
-
-/* ================= CONTENT ================= */
-
-.container{
-max-width:1150px;
-margin:auto;
-padding:55px 20px;
-}
-
-.box,
-.card,
-.profil-box,
-.box-kontak,
-.prestasi-box{
-background:#fff;
-padding:28px;
-border-radius:24px;
-box-shadow:0 10px 25px rgba(0,0,0,0.07);
-margin-bottom:25px;
-}
-
-h2{
-font-size:34px;
-margin-bottom:18px;
-color:#0a5a2d;
-}
-
-h3{
-font-size:24px;
-margin-bottom:12px;
-}
-
-p{
-font-size:18px;
-margin-bottom:10px;
-}
-
-ul{
-padding-left:20px;
-}
-
-li{
-margin-bottom:10px;
-font-size:18px;
-}
-
-/* ================= GRID ================= */
-
-.gallery,
-.prestasi-grid,
-.kontak-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:24px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-background:#06361b;
-color:#fff;
-text-align:center;
-padding:28px 20px;
-margin-top:30px;
-font-size:17px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-.logo-area{
-font-size:15px;
-max-width:220px;
-line-height:1.2;
-}
-
-.logo{
-width:46px;
-height:46px;
-border-radius:12px;
-}
-
-.menu-toggle{
-display:block;
-}
-
-.menu{
-display:none;
-position:absolute;
-top:78px;
-left:0;
-right:0;
-background:rgba(8,122,56,0.98);
-backdrop-filter:blur(10px);
-flex-direction:column;
-padding:15px;
-gap:10px;
-box-shadow:0 12px 20px rgba(0,0,0,0.15);
-}
-
-.menu.active{
-display:flex;
-animation:turun 0.25s ease;
-}
-
-.menu li a{
-display:block;
-font-size:17px;
-padding:14px;
-text-align:center;
-background:rgba(255,255,255,0.08);
-border-radius:14px;
-}
-
-.hero,
-.hero-spmb,
-.hero-profil,
-.hero-galeri,
-.hero-prestasi,
-.hero-kontak{
-min-height:82vh;
-padding:40px 18px;
-}
-
-.hero-logo{
-width:105px;
-padding:10px;
-border-radius:18px;
-margin-bottom:18px;
-}
-
-.hero h1,
-.hero-spmb h1,
-.hero-profil h1,
-.hero-galeri h1,
-.hero-prestasi h1,
-.hero-kontak h1{
-font-size:32px;
-line-height:1.2;
-}
-
-.hero p,
-.hero-spmb p,
-.hero-profil p,
-.hero-galeri p,
-.hero-prestasi p,
-.hero-kontak p{
-font-size:17px;
-}
-
-h2{
-font-size:28px;
-}
-
-p,li{
-font-size:17px;
-}
-
-.btn,
-.wa-btn{
-display:block;
-width:100%;
-max-width:320px;
-margin:10px auto;
-text-align:center;
-}
+},30);
 
 }
 
-@keyframes turun{
-from{
-opacity:0;
-transform:translateY(-10px);
+let started = false;
+
+window.addEventListener("scroll",function(){
+
+const section = document.querySelector(".stats-section");
+
+if(!section) return;
+
+const top = section.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100 && !started){
+
+started = true;
+
+stats.forEach(stat=>{
+animateValue(stat, stat.innerText);
+});
+
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+
+});
