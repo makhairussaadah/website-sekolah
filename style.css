@@ -328,3 +328,9 @@ transform:translateY(-4px) scale(1.03);
 .navbar{
 transition:0.3s;
 }
+
+.logo{
+border-radius:12px !important;
+}
+
+
