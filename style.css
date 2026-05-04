@@ -291,3 +291,40 @@ opacity:1;
 transform:translateY(0);
 }
 }
+
+/* ================= UPGRADE PREMIUM ================= */
+
+/* HERO LEBIH HIDUP */
+.hero{
+animation:fadeUp 1s ease;
+}
+
+/* LOGO HALUS */
+.hero-logo{
+transition:0.3s;
+}
+.hero-logo:hover{
+transform:scale(1.05);
+}
+
+/* CARD LEBIH HIDUP */
+.stat-box, .card{
+transition:0.3s;
+}
+.stat-box:hover, .card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* BUTTON LEBIH PREMIUM */
+.btn-main, .btn-primary, .btn-gold{
+box-shadow:0 8px 18px rgba(0,0,0,0.2);
+}
+.btn-main:hover, .btn-primary:hover, .btn-gold:hover{
+transform:translateY(-4px) scale(1.03);
+}
+
+/* NAVBAR LEBIH HALUS */
+.navbar{
+transition:0.3s;
+}
