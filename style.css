@@ -351,3 +351,45 @@ padding:60px 20px;
 margin-bottom:10px;
 }
 
+/* ===== PROFIL PREMIUM ===== */
+
+.hero-profil{
+height:50vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,50,25,0.7),rgba(0,50,25,0.7)),
+url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+background-size:cover;
+color:white;
+}
+
+.guru-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.guru-card{
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.guru-card:hover{
+transform:translateY(-6px);
+}
+
+.guru-card img{
+width:100px;
+height:100px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+
