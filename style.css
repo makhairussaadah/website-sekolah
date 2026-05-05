@@ -503,3 +503,85 @@ width:180px;
 height:180px;
 }
 }
+
+/* ===== FIX FINAL SEJARAH PREMIUM ===== */
+
+.sejarah-wrap{
+display:flex;
+gap:50px;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+/* FOTO LEBIH TENGAH & ELEGAN */
+.sejarah-foto{
+flex:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.sejarah-foto img{
+width:230px;
+height:230px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,0.18);
+transition:0.3s;
+}
+
+.sejarah-foto img:hover{
+transform:scale(1.05);
+}
+
+/* NAMA DI BAWAH FOTO (JIKA ADA) */
+.sejarah-foto p{
+margin-top:10px;
+font-weight:600;
+color:#333;
+}
+
+/* TEKS LEBIH RAPI */
+.sejarah-text{
+flex:2;
+max-width:650px;
+}
+
+.sejarah-text h2{
+margin-bottom:15px;
+color:#0b7a39;
+font-size:30px;
+}
+
+/* INI YANG KAMU MAU: JUSTIFY */
+.sejarah-text p{
+text-align:justify;
+line-height:1.9;
+font-size:17px;
+color:#444;
+}
+
+/* MOBILE BIAR TETAP BAGUS */
+@media(max-width:768px){
+.sejarah-wrap{
+flex-direction:column;
+text-align:center;
+gap:25px;
+}
+
+.sejarah-text{
+max-width:100%;
+}
+
+.sejarah-text p{
+text-align:justify;
+}
+
+.sejarah-foto img{
+width:180px;
+height:180px;
+}
+}
+
