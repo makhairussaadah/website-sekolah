@@ -62,6 +62,17 @@ transition:0.3s;
 .wa-btn:hover{
 transform:translateY(-3px);
 }
+
+.btn-daftar{
+display:inline-block;
+margin-top:20px;
+padding:15px 28px;
+background:#ffd54a;
+color:#111;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+}
 </style>
 
 </head>
@@ -93,10 +104,10 @@ transform:translateY(-3px);
 
 <section class="hero-spmb">
 <h1>SPMB 2026</h1>
-<p>Sistem Penerimaan Murid Baru Tahun Ajaran 2026/2027</p>
+<p>Penerimaan Murid Baru Tahun Ajaran 2026/2027</p>
 
 <div class="countdown" id="countdown">
-Segera Dibuka
+Menghitung waktu...
 </div>
 </section>
 
@@ -105,27 +116,36 @@ Segera Dibuka
 <div class="box">
 <h2>Jadwal Pendaftaran</h2>
 <ul class="list">
-<li>Pendaftaran Gelombang 1 : Januari 2026</li>
-<li>Gelombang 2 : Maret 2026</li>
-<li>Pengumuman : Juni 2026</li>
-<li>Masuk Sekolah : Juli 2026</li>
+<li><b>Gelombang 1:</b> 22 Juni – 3 Juli 2026</li>
+<li><b>Gelombang 2:</b> 6 Juli – 15 Juli 2026</li>
+<li><b>Jam Pendaftaran:</b> 08.00 – 12.00 WIB</li>
 </ul>
 </div>
 
 <div class="box">
 <h2>Persyaratan</h2>
 <ul class="list">
-<li>Fotocopy KK</li>
-<li>Fotocopy Akta Kelahiran</li>
-<li>Fotocopy Ijazah/SKL SMP/MTs</li>
-<li>Pas Foto 3x4 (2 lembar)</li>
-<li>Mengisi Formulir Pendaftaran</li>
+<li>Mengisi formulir pendaftaran</li>
+<li>Fotokopi SKL / Ijazah SMP/MTs</li>
+<li>Fotokopi Raport SMP/MTs</li>
+<li>Fotokopi Akta Kelahiran</li>
+<li>Fotokopi Kartu PIP (jika ada)</li>
+<li>Pas foto 3x4 & 4x6 (masing-masing 2 lembar)</li>
 </ul>
 </div>
 
+<div class="box">
+<h2>Daftar Online</h2>
+<p>Isi formulir pendaftaran secara online dengan mudah</p>
+
+<a href="https://forms.gle/ISI_LINK_KAMU" target="_blank" class="btn-daftar">
+Daftar Sekarang
+</a>
+</div>
+
 <div class="box" style="text-align:center;">
-<h2>Daftar Sekarang</h2>
-<p>Hubungi Panitia Pendaftaran via WhatsApp</p>
+<h2>Daftar Offline</h2>
+<p>Datang langsung ke madrasah atau hubungi panitia</p>
 
 <a href="https://wa.me/6281233246744" class="wa-btn" target="_blank">
 Chat WhatsApp
@@ -139,21 +159,87 @@ Chat WhatsApp
 </footer>
 
 <script>
-const targetDate = new Date("Jan 1, 2026 00:00:00").getTime();
+// ===== SET TANGGAL =====
+const gel1Mulai = new Date("June 22, 2026 08:00:00").getTime();
+const gel1Akhir = new Date("July 3, 2026 12:00:00").getTime();
 
-setInterval(function(){
-const now = new Date().getTime();
-const distance = targetDate - now;
+const gel2Mulai = new Date("July 6, 2026 08:00:00").getTime();
+const gel2Akhir = new Date("July 15, 2026 12:00:00").getTime();
 
-if(distance > 0){
-const days = Math.floor(distance/(1000*60*60*24));
-document.getElementById("countdown").innerHTML =
-days + " Hari Lagi Dibuka";
+const el = document.getElementById("countdown");
+
+// ===== FORMAT ANGKA (2 digit) =====
+function format(n){
+return n < 10 ? "0"+n : n;
 }
+
+// ===== UPDATE =====
+setInterval(function(){
+
+const now = new Date().getTime();
+let text = "";
+
+// ===== SEBELUM GELOMBANG 1 =====
+if(now < gel1Mulai){
+
+const d = gel1Mulai - now;
+
+const hari = Math.floor(d/(1000*60*60*24));
+const jam = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+const menit = Math.floor((d%(1000*60*60))/(1000*60));
+const detik = Math.floor((d%(1000*60))/1000);
+
+text = `
+<span class="angka">${format(hari)}</span>H
+<span class="angka">${format(jam)}</span>J
+<span class="angka">${format(menit)}</span>M
+<span class="angka">${format(detik)}</span>D
+<br><small>Menuju Gelombang 1</small>
+`;
+
+}
+
+// ===== GELOMBANG 1 BERLANGSUNG =====
+else if(now >= gel1Mulai && now <= gel1Akhir){
+text = "🔥 Gelombang 1 Sedang Dibuka";
+}
+
+// ===== MENUJU GELOMBANG 2 =====
+else if(now < gel2Mulai){
+
+const d = gel2Mulai - now;
+
+const hari = Math.floor(d/(1000*60*60*24));
+const jam = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+const menit = Math.floor((d%(1000*60*60))/(1000*60));
+const detik = Math.floor((d%(1000*60))/1000);
+
+text = `
+<span class="angka">${format(hari)}</span>H
+<span class="angka">${format(jam)}</span>J
+<span class="angka">${format(menit)}</span>M
+<span class="angka">${format(detik)}</span>D
+<br><small>Menuju Gelombang 2</small>
+`;
+
+}
+
+// ===== GELOMBANG 2 BERLANGSUNG =====
+else if(now >= gel2Mulai && now <= gel2Akhir){
+text = "🟢 Gelombang 2 Sedang Dibuka";
+}
+
+// ===== SELESAI =====
+else{
+text = "❌ Pendaftaran Telah Ditutup";
+}
+
+el.innerHTML = text;
+
 },1000);
 </script>
 
 <script src="script.js"></script>
-  
+
 </body>
 </html>
