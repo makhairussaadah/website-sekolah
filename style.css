@@ -382,3 +382,72 @@ object-fit:cover;
 margin-bottom:12px;
 border:4px solid #0b7a39;
 }
+
+/* ================= GURU PREMIUM ================= */
+
+.guru-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.guru-card{
+background:#fff;
+border-radius:20px;
+padding:25px 20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+position:relative;
+overflow:hidden;
+}
+
+.guru-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:5px;
+background:linear-gradient(90deg,#0b7a39,#14b85c);
+}
+
+.guru-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.guru-card img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+border:4px solid #eaf7f0;
+}
+
+.guru-card h3{
+font-size:18px;
+margin-bottom:6px;
+color:#222;
+}
+
+.guru-card p{
+font-size:14px;
+color:#777;
+}
+
+/* Mobile lebih rapat */
+@media(max-width:768px){
+.guru-card{
+padding:20px 15px;
+}
+
+.guru-card img{
+width:85px;
+height:85px;
+}
+}
+
+
