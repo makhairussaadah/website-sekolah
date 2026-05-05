@@ -587,3 +587,26 @@ height:180px;
 }
 }
 
+.angka{
+display:inline-block;
+background:#fff;
+color:#0b7a39;
+padding:8px 12px;
+margin:3px;
+border-radius:10px;
+font-weight:bold;
+min-width:45px;
+text-align:center;
+animation:pop 0.3s ease;
+}
+
+@keyframes pop{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
