@@ -459,3 +459,47 @@ padding:120px 20px 70px;
 .hero-profil{
 margin-top:80px;
 }
+
+/* ===== SEJARAH + FOTO PENDIRI ===== */
+
+.sejarah-wrap{
+display:flex;
+gap:30px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.sejarah-foto{
+flex:1;
+text-align:center;
+}
+
+.sejarah-foto img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.sejarah-text{
+flex:2;
+}
+
+.sejarah-text h2{
+margin-bottom:15px;
+color:#0b7a39;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.sejarah-wrap{
+flex-direction:column;
+text-align:center;
+}
+
+.sejarah-foto img{
+width:180px;
+height:180px;
+}
+}
