@@ -454,15 +454,8 @@ height:85px;
 
 .guru-card{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(40p);
 transition:all 0.8s ease;
 }
-
-/* saat muncul */
-.guru-card.show{
-opacity:1;
-transform:translateY(0);
-}
-
 
 
