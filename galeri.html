@@ -62,33 +62,54 @@ transform:translateX(-100%);
 }
 }
 
-/* ===== FILTER ===== */
+/* ===== FILTER MENU ===== */
 
-.filter{
+.filter-menu{
 display:flex;
 justify-content:center;
 gap:12px;
 flex-wrap:wrap;
-margin-bottom:35px;
+margin:35px 0;
 }
 
-.filter button{
+.filter-menu button{
 padding:12px 22px;
 border:none;
 border-radius:40px;
-background:#fff;
+background:white;
+font-weight:600;
 cursor:pointer;
-font-weight:bold;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
-.filter button:hover{
+.filter-menu button:hover{
 background:#0b7a39;
 color:white;
 transform:translateY(-3px);
 }
 
+.filter-menu button.active{
+background:#0b7a39;
+color:white;
+}
+
+/* ANIMASI ITEM */
+.item{
+animation:fadeUp .5s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+  
 /* ===== GALLERY ===== */
 
 .gallery{
@@ -269,8 +290,37 @@ Dokumentasi Aktivitas dan Prestasi Madrasah
 
 <div class="run-text">
 <span>
-✨ Belajar Bersama ✨ Upacara ✨ Lomba ✨ Kegiatan Islami ✨ Prestasi Siswa ✨ Pramuka ✨ Class Meeting ✨
+✨ Kegiatan Pembelajaran ✨ Ekstrakurikuler ✨ Lomba ✨ Acara Madrasah ✨ Alumni ✨
 </span>
+</div>
+
+<!-- MENU FILTER -->
+<div class="filter-menu">
+
+<button class="active" onclick="filterGallery('all')">
+Semua
+</button>
+
+<button onclick="filterGallery('pembelajaran')">
+Pembelajaran
+</button>
+
+<button onclick="filterGallery('ekstra')">
+Ekstrakurikuler
+</button>
+
+<button onclick="filterGallery('lomba')">
+Lomba
+</button>
+
+<button onclick="filterGallery('acara')">
+Acara
+</button>
+
+<button onclick="filterGallery('alumni')">
+Alumni
+</button>
+
 </div>
 
 <!-- CONTENT -->
@@ -339,6 +389,37 @@ Dokumentasi Aktivitas dan Prestasi Madrasah
 
 </div>
 
+<script>
+
+function filterGallery(category){
+
+const items = document.querySelectorAll('.item');
+const buttons = document.querySelectorAll('.filter-menu button');
+
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+});
+
+event.target.classList.add('active');
+
+items.forEach(item=>{
+
+if(category === 'all'){
+item.style.display = 'block';
+}
+else if(item.classList.contains(category)){
+item.style.display = 'block';
+}
+else{
+item.style.display = 'none';
+}
+
+});
+
+}
+
+</script>
+  
 <script src="script.js"></script>
 
 <script>
@@ -363,3 +444,7 @@ document.getElementById("zoomBox").style.display = "none";
 
 </body>
 </html>
+
+
+
+
