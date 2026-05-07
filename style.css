@@ -671,3 +671,25 @@ from{transform:scale(0.7);}
 to{transform:scale(1);}
 }
 
+.angka{
+display:inline-block;
+background:#fff;
+color:#0b7a39;
+padding:10px 16px;
+border-radius:14px;
+margin:5px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+min-width:70px;
+}
+
+@keyframes zoomIn{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
