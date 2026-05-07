@@ -30,23 +30,29 @@ font-size:20px;
 opacity:0.95;
 }
 
+/* ===== COUNTDOWN ===== */
+
 .countdown{
 margin-top:25px;
-font-size:30px;
+font-size:28px;
 font-weight:bold;
 color:#ffd700;
 line-height:1.8;
-animation:fade 1s infinite alternate;
 }
 
 .angka{
 display:inline-block;
-background:rgba(255,255,255,0.15);
-padding:8px 14px;
-border-radius:12px;
-margin:4px;
-backdrop-filter:blur(5px);
+background:#ffffff;
+color:#0b7a39;
+padding:10px 16px;
+border-radius:14px;
+margin:5px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+min-width:70px;
 }
+
+/* ===== BOX ===== */
 
 .box{
 background:white;
@@ -58,8 +64,10 @@ margin-bottom:25px;
 
 .list li{
 margin-bottom:12px;
-line-height:1.8;
+line-height:1.7;
 }
+
+/* ===== BUTTON ===== */
 
 .wa-btn{
 display:inline-block;
@@ -87,15 +95,36 @@ text-decoration:none;
 font-weight:bold;
 border-radius:50px;
 transition:0.3s;
-border:none;
-cursor:pointer;
 }
 
 .btn-daftar:hover{
 transform:translateY(-3px);
 }
 
-@keyframes zoom{
+/* ===== BROSUR ===== */
+
+.brosur{
+padding:40px 20px;
+background:#f7f8f7;
+text-align:center;
+}
+
+.brosur img{
+width:100%;
+max-width:700px;
+border-radius:20px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.brosur img:hover{
+transform:scale(1.02);
+}
+
+/* ===== ZOOM ===== */
+
+@keyframes zoomIn{
 from{
 transform:scale(0.7);
 opacity:0;
@@ -106,13 +135,27 @@ opacity:1;
 }
 }
 
-@keyframes fade{
-from{
-opacity:0.8;
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.hero-spmb h1{
+font-size:36px;
 }
-to{
-opacity:1;
+
+.hero-spmb p{
+font-size:17px;
 }
+
+.countdown{
+font-size:22px;
+}
+
+.angka{
+padding:8px 12px;
+min-width:60px;
+}
+
 }
 
 </style>
@@ -121,6 +164,7 @@ opacity:1;
 <body>
 
 <header>
+
 <nav class="navbar">
 
 <a href="index.html" class="brand">
@@ -144,7 +188,10 @@ opacity:1;
 </ul>
 
 </nav>
+
 </header>
+
+<!-- HERO -->
 
 <section class="hero-spmb">
 
@@ -159,6 +206,28 @@ Menghitung waktu...
 </div>
 
 </section>
+
+<!-- BROSUR -->
+
+<section class="brosur">
+
+<h2 style="margin-bottom:25px;color:#0b7a39;">
+Brosur SPMB 2026
+</h2>
+
+<img 
+src="brosur.png"
+onclick="zoomBrosur(this.src)"
+alt="Brosur SPMB"
+>
+
+<p style="margin-top:15px;color:#666;">
+Klik brosur untuk memperbesar
+</p>
+
+</section>
+
+<!-- CONTENT -->
 
 <section class="container">
 
@@ -176,23 +245,6 @@ Menghitung waktu...
 
 <div class="box">
 
-<h2>Keuntungan Pendaftaran</h2>
-
-<ul class="list">
-<li>
-<b>Gelombang 1:</b> Gratis SPP, seragam putih abu-abu,
-seragam pramuka, seragam olahraga, dan baju batik.
-</li>
-
-<li>
-<b>Gelombang 2:</b> Gratis SPP.
-</li>
-</ul>
-
-</div>
-
-<div class="box">
-
 <h2>Persyaratan</h2>
 
 <ul class="list">
@@ -200,8 +252,8 @@ seragam pramuka, seragam olahraga, dan baju batik.
 <li>Fotokopi SKL / Ijazah SMP/MTs</li>
 <li>Fotokopi Raport SMP/MTs</li>
 <li>Fotokopi Akta Kelahiran</li>
-<li>Fotokopi Kartu PIP (Jika Ada)</li>
-<li>Pas Foto 3x4 dan 4x6 (2 lembar)</li>
+<li>Fotokopi Kartu PIP (jika ada)</li>
+<li>Pas foto 3x4 & 4x6 (masing-masing 2 lembar)</li>
 </ul>
 
 </div>
@@ -214,27 +266,29 @@ seragam pramuka, seragam olahraga, dan baju batik.
 Isi formulir pendaftaran secara online dengan mudah
 </p>
 
-<a href="https://forms.gle/Lwj21sbvqZpv3UbU6"
+<a 
+href="https://forms.gle/Lwj21sbvqZpv3UbU6"
 target="_blank"
-class="btn-daftar">
+class="btn-daftar"
+>
 Daftar Sekarang
 </a>
 
 </div>
 
-<div class="box">
+<div class="box" style="text-align:center;">
 
 <h2>Daftar Offline</h2>
 
-<ul class="list">
-<li>Datang ke madrasah membawa berkas persyaratan</li>
-<li>Mengisi formulir pendaftaran</li>
-<li>Melakukan daftar ulang</li>
-</ul>
+<p>
+Datang langsung ke madrasah atau hubungi panitia
+</p>
 
-<a href="https://wa.me/6281233246744"
+<a 
+href="https://wa.me/6281233246744"
 class="wa-btn"
-target="_blank">
+target="_blank"
+>
 Chat WhatsApp
 </a>
 
@@ -246,32 +300,40 @@ Chat WhatsApp
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
-<!-- ===== POPUP BROSUR ===== -->
+<!-- ===== ZOOM IMAGE ===== -->
 
-<div id="popupBrosur" class="popup">
+<div id="zoomBox"
+style="
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+padding:20px;
+"
+onclick="closeZoom()">
 
-<div class="popup-content">
-
-<span class="close" onclick="tutupPopup()">
-&times;
-</span>
-
-<img src="brosur.png" alt="Brosur SPMB">
-
-</div>
+<img id="zoomImg"
+style="
+max-width:95%;
+max-height:95%;
+border-radius:20px;
+animation:zoomIn .3s ease;
+">
 
 </div>
 
 <script>
 
-// ===== POPUP =====
+// ===== MENU =====
 
-function openBrosur(){
-document.getElementById("popupBrosur").style.display = "flex";
-}
-
-function tutupPopup(){
-document.getElementById("popupBrosur").style.display = "none";
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
 }
 
 // ===== COUNTDOWN =====
@@ -294,7 +356,7 @@ const now = new Date().getTime();
 
 let text = "";
 
-// ===== MENUJU GELOMBANG 1 =====
+// GEL 1
 
 if(now < gel1Mulai){
 
@@ -306,27 +368,36 @@ const menit = Math.floor((d%(1000*60*60))/(1000*60));
 const detik = Math.floor((d%(1000*60))/1000);
 
 text = `
-<span class="angka">${format(hari)}</span> Hari
-<span class="angka">${format(jam)}</span> Jam
-<span class="angka">${format(menit)}</span> Menit
-<span class="angka">${format(detik)}</span> Detik
+<span class="angka">${format(hari)}</span>
+<span class="angka">${format(jam)}</span>
+<span class="angka">${format(menit)}</span>
+<span class="angka">${format(detik)}</span>
+
 <br>
-<small>Menuju Pembukaan Gelombang 1</small>
+
+<small>
+Hari &nbsp;&nbsp;&nbsp;
+Jam &nbsp;&nbsp;&nbsp;
+Menit &nbsp;&nbsp;&nbsp;
+Detik
+</small>
+
+<br>
+
+<small>Menuju Gelombang 1</small>
 `;
 
 }
 
-// ===== GELOMBANG 1 =====
+// GEL 1 ACTIVE
 
 else if(now >= gel1Mulai && now <= gel1Akhir){
 
-text = `
-🔥 Gelombang 1 Sedang Dibuka
-`;
+text = "🔥 Gelombang 1 Sedang Dibuka";
 
 }
 
-// ===== MENUJU GELOMBANG 2 =====
+// MENUJU GEL 2
 
 else if(now < gel2Mulai){
 
@@ -338,33 +409,40 @@ const menit = Math.floor((d%(1000*60*60))/(1000*60));
 const detik = Math.floor((d%(1000*60))/1000);
 
 text = `
-<span class="angka">${format(hari)}</span> Hari
-<span class="angka">${format(jam)}</span> Jam
-<span class="angka">${format(menit)}</span> Menit
-<span class="angka">${format(detik)}</span> Detik
+<span class="angka">${format(hari)}</span>
+<span class="angka">${format(jam)}</span>
+<span class="angka">${format(menit)}</span>
+<span class="angka">${format(detik)}</span>
+
 <br>
-<small>Menuju Pembukaan Gelombang 2</small>
+
+<small>
+Hari &nbsp;&nbsp;&nbsp;
+Jam &nbsp;&nbsp;&nbsp;
+Menit &nbsp;&nbsp;&nbsp;
+Detik
+</small>
+
+<br>
+
+<small>Menuju Gelombang 2</small>
 `;
 
 }
 
-// ===== GELOMBANG 2 =====
+// GEL 2 ACTIVE
 
 else if(now >= gel2Mulai && now <= gel2Akhir){
 
-text = `
-🟢 Gelombang 2 Sedang Dibuka
-`;
+text = "🟢 Gelombang 2 Sedang Dibuka";
 
 }
 
-// ===== DITUTUP =====
+// CLOSED
 
 else{
 
-text = `
-❌ Pendaftaran Telah Ditutup
-`;
+text = "❌ Pendaftaran Telah Ditutup";
 
 }
 
@@ -372,9 +450,23 @@ el.innerHTML = text;
 
 },1000);
 
-</script>
+// ===== ZOOM =====
 
-<script src="script.js"></script>
+function zoomBrosur(src){
+
+document.getElementById("zoomBox").style.display="flex";
+
+document.getElementById("zoomImg").src=src;
+
+}
+
+function closeZoom(){
+
+document.getElementById("zoomBox").style.display="none";
+
+}
+
+</script>
 
 </body>
 </html>
