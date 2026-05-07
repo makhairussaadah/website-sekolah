@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPMB 2026 | MA Khairussa'adah Kubu</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
+
 .hero-spmb{
 padding:90px 20px;
 text-align:center;
-background:linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
+background:
+linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
 url('backgroundspmb.jpeg');
 background-size:cover;
 background-position:center;
@@ -29,9 +32,20 @@ opacity:0.95;
 
 .countdown{
 margin-top:25px;
-font-size:28px;
+font-size:30px;
 font-weight:bold;
 color:#ffd700;
+line-height:1.8;
+animation:fade 1s infinite alternate;
+}
+
+.angka{
+display:inline-block;
+background:rgba(255,255,255,0.15);
+padding:8px 14px;
+border-radius:12px;
+margin:4px;
+backdrop-filter:blur(5px);
 }
 
 .box{
@@ -40,14 +54,11 @@ padding:30px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 margin-bottom:25px;
-<button onclick="bukaPopup()" class="btn-daftar">
-Lihat Brosur
-</button>
 }
 
 .list li{
 margin-bottom:12px;
-line-height:1.7;
+line-height:1.8;
 }
 
 .wa-btn{
@@ -75,10 +86,84 @@ color:#111;
 text-decoration:none;
 font-weight:bold;
 border-radius:50px;
+transition:0.3s;
+border:none;
+cursor:pointer;
 }
-</style>
 
+.btn-daftar:hover{
+transform:translateY(-3px);
+}
+
+/* ===== POPUP BROSUR ===== */
+
+.popup{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.popup-content{
+position:relative;
+max-width:700px;
+width:100%;
+animation:zoom 0.3s ease;
+}
+
+.popup-content img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.close{
+position:absolute;
+top:-15px;
+right:-15px;
+background:white;
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:bold;
+cursor:pointer;
+color:#111;
+}
+
+@keyframes zoom{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0.8;
+}
+to{
+opacity:1;
+}
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
@@ -86,10 +171,12 @@ border-radius:50px;
 
 <a href="index.html" class="brand">
 <img src="logo.png" class="logo">
+
 <div>
 <b>MA Khairussa'adah</b>
 <span>Kubu</span>
 </div>
+
 </a>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -106,59 +193,101 @@ border-radius:50px;
 </header>
 
 <section class="hero-spmb">
+
 <h1>SPMB 2026</h1>
-<p>Sistem Penerimaan Murid Baru Tahun Ajaran 2026/2027</p>
+
+<p>
+Sistem Penerimaan Murid Baru Tahun Ajaran 2026/2027
+</p>
 
 <div class="countdown" id="countdown">
 Menghitung waktu...
 </div>
 
-<button onclick="openBrosur()" class="btn-daftar" style="margin-top:20px;">
+<button onclick="openBrosur()" class="btn-daftar">
 📄 Lihat Brosur
 </button>
-  
+
 </section>
 
 <section class="container">
 
 <div class="box">
+
 <h2>Jadwal Pendaftaran</h2>
+
 <ul class="list">
 <li><b>Gelombang 1:</b> 22 Juni – 3 Juli 2026</li>
 <li><b>Gelombang 2:</b> 6 Juli – 15 Juli 2026</li>
 <li><b>Jam Pendaftaran:</b> 08.00 – 12.00 WIB</li>
 </ul>
+
 </div>
 
 <div class="box">
+
+<h2>Keuntungan Pendaftaran</h2>
+
+<ul class="list">
+<li>
+<b>Gelombang 1:</b> Gratis SPP, seragam putih abu-abu,
+seragam pramuka, seragam olahraga, dan baju batik.
+</li>
+
+<li>
+<b>Gelombang 2:</b> Gratis SPP.
+</li>
+</ul>
+
+</div>
+
+<div class="box">
+
 <h2>Persyaratan</h2>
+
 <ul class="list">
 <li>Mengisi formulir pendaftaran</li>
 <li>Fotokopi SKL / Ijazah SMP/MTs</li>
 <li>Fotokopi Raport SMP/MTs</li>
 <li>Fotokopi Akta Kelahiran</li>
-<li>Fotokopi Kartu PIP (jika ada)</li>
-<li>Pas foto 3x4 & 4x6 (masing-masing 2 lembar)</li>
+<li>Fotokopi Kartu PIP (Jika Ada)</li>
+<li>Pas Foto 3x4 dan 4x6 (2 lembar)</li>
 </ul>
+
 </div>
 
 <div class="box">
-<h2>Daftar Online</h2>
-<p>Isi formulir pendaftaran secara online dengan mudah</p>
 
-<a href="https://forms.gle/Lwj21sbvqZpv3UbU6" target="_blank" 
-class="btn-daftar disabled" id="btnDaftar">
+<h2>Daftar Online</h2>
+
+<p>
+Isi formulir pendaftaran secara online dengan mudah
+</p>
+
+<a href="https://forms.gle/Lwj21sbvqZpv3UbU6"
+target="_blank"
+class="btn-daftar">
 Daftar Sekarang
 </a>
+
 </div>
 
-<div class="box" style="text-align:center;">
-<h2>Daftar Offline</h2>
-<p>Datang langsung ke madrasah atau hubungi panitia</p>
+<div class="box">
 
-<a href="https://wa.me/6281233246744" class="wa-btn" target="_blank">
+<h2>Daftar Offline</h2>
+
+<ul class="list">
+<li>Datang ke madrasah membawa berkas persyaratan</li>
+<li>Mengisi formulir pendaftaran</li>
+<li>Melakukan daftar ulang</li>
+</ul>
+
+<a href="https://wa.me/6281233246744"
+class="wa-btn"
+target="_blank">
 Chat WhatsApp
 </a>
+
 </div>
 
 </section>
@@ -167,8 +296,36 @@ Chat WhatsApp
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
+<!-- ===== POPUP BROSUR ===== -->
+
+<div id="popupBrosur" class="popup">
+
+<div class="popup-content">
+
+<span class="close" onclick="tutupPopup()">
+&times;
+</span>
+
+<img src="brosur.png" alt="Brosur SPMB">
+
+</div>
+
+</div>
+
 <script>
-// ===== SET TANGGAL =====
+
+// ===== POPUP =====
+
+function openBrosur(){
+document.getElementById("popupBrosur").style.display = "flex";
+}
+
+function tutupPopup(){
+document.getElementById("popupBrosur").style.display = "none";
+}
+
+// ===== COUNTDOWN =====
+
 const gel1Mulai = new Date("June 22, 2026 08:00:00").getTime();
 const gel1Akhir = new Date("July 3, 2026 12:00:00").getTime();
 
@@ -177,18 +334,18 @@ const gel2Akhir = new Date("July 15, 2026 12:00:00").getTime();
 
 const el = document.getElementById("countdown");
 
-// ===== FORMAT ANGKA (2 digit) =====
 function format(n){
 return n < 10 ? "0"+n : n;
 }
 
-// ===== UPDATE =====
 setInterval(function(){
 
 const now = new Date().getTime();
+
 let text = "";
 
-// ===== SEBELUM GELOMBANG 1 =====
+// ===== MENUJU GELOMBANG 1 =====
+
 if(now < gel1Mulai){
 
 const d = gel1Mulai - now;
@@ -199,21 +356,28 @@ const menit = Math.floor((d%(1000*60*60))/(1000*60));
 const detik = Math.floor((d%(1000*60))/1000);
 
 text = `
-<span class="angka">${format(hari)}</span>H
-<span class="angka">${format(jam)}</span>J
-<span class="angka">${format(menit)}</span>M
-<span class="angka">${format(detik)}</span>D
-<br><small>Menuju Gelombang 1</small>
+<span class="angka">${format(hari)}</span> Hari
+<span class="angka">${format(jam)}</span> Jam
+<span class="angka">${format(menit)}</span> Menit
+<span class="angka">${format(detik)}</span> Detik
+<br>
+<small>Menuju Pembukaan Gelombang 1</small>
 `;
 
 }
 
-// ===== GELOMBANG 1 BERLANGSUNG =====
+// ===== GELOMBANG 1 =====
+
 else if(now >= gel1Mulai && now <= gel1Akhir){
-text = "🔥 Gelombang 1 Sedang Dibuka";
+
+text = `
+🔥 Gelombang 1 Sedang Dibuka
+`;
+
 }
 
 // ===== MENUJU GELOMBANG 2 =====
+
 else if(now < gel2Mulai){
 
 const d = gel2Mulai - now;
@@ -224,40 +388,43 @@ const menit = Math.floor((d%(1000*60*60))/(1000*60));
 const detik = Math.floor((d%(1000*60))/1000);
 
 text = `
-<span class="angka">${format(hari)}</span>H
-<span class="angka">${format(jam)}</span>J
-<span class="angka">${format(menit)}</span>M
-<span class="angka">${format(detik)}</span>D
-<br><small>Menuju Gelombang 2</small>
+<span class="angka">${format(hari)}</span> Hari
+<span class="angka">${format(jam)}</span> Jam
+<span class="angka">${format(menit)}</span> Menit
+<span class="angka">${format(detik)}</span> Detik
+<br>
+<small>Menuju Pembukaan Gelombang 2</small>
 `;
 
 }
 
-// ===== GELOMBANG 2 BERLANGSUNG =====
+// ===== GELOMBANG 2 =====
+
 else if(now >= gel2Mulai && now <= gel2Akhir){
-text = "🟢 Gelombang 2 Sedang Dibuka";
+
+text = `
+🟢 Gelombang 2 Sedang Dibuka
+`;
+
 }
 
-// ===== SELESAI =====
+// ===== DITUTUP =====
+
 else{
-text = "❌ Pendaftaran Telah Ditutup";
+
+text = `
+❌ Pendaftaran Telah Ditutup
+`;
+
 }
 
 el.innerHTML = text;
 
 },1000);
+
 </script>
 
 <script src="script.js"></script>
 
-<!-- POPUP BROSUR -->
-<div id="popupBrosur" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="tutupPopup()">&times;</span>
-    <img src="brosur.png" alt="Brosur SPMB">
-  </div>
-</div>
-  
 </body>
 </html>
-
