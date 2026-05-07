@@ -94,22 +94,6 @@ background:#0b7a39;
 color:white;
 }
 
-/* ANIMASI ITEM */
-.item{
-animation:fadeUp .5s ease;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-  
 /* ===== GALLERY ===== */
 
 .gallery{
@@ -295,29 +279,30 @@ Dokumentasi Aktivitas dan Prestasi Madrasah
 </div>
 
 <!-- MENU FILTER -->
+
 <div class="filter-menu">
 
-<button class="active" onclick="filterGallery('all')">
+<button class="active" onclick="filterGallery('all', this)">
 Semua
 </button>
 
-<button onclick="filterGallery('pembelajaran')">
+<button onclick="filterGallery('pembelajaran', this)">
 Pembelajaran
 </button>
 
-<button onclick="filterGallery('ekstra')">
+<button onclick="filterGallery('ekstra', this)">
 Ekstrakurikuler
 </button>
 
-<button onclick="filterGallery('lomba')">
+<button onclick="filterGallery('lomba', this)">
 Lomba
 </button>
 
-<button onclick="filterGallery('acara')">
+<button onclick="filterGallery('acara', this)">
 Acara
 </button>
 
-<button onclick="filterGallery('alumni')">
+<button onclick="filterGallery('alumni', this)">
 Alumni
 </button>
 
@@ -327,38 +312,56 @@ Alumni
 
 <section class="container">
 
-<!-- GALLERY -->
-
 <div class="gallery">
 
-<div class="item" onclick="zoomImage(this)">
+<!-- PEMBELAJARAN -->
+
+<div class="item pembelajaran" onclick="zoomImage(this)">
 <img src="galeri1.jpeg">
 <div class="caption">Kegiatan Belajar</div>
 </div>
 
-<div class="item" onclick="zoomImage(this)">
+<div class="item pembelajaran" onclick="zoomImage(this)">
 <img src="galeri2.jpeg">
 <div class="caption">Diskusi Siswa</div>
 </div>
 
-<div class="item" onclick="zoomImage(this)">
+<!-- ACARA -->
+
+<div class="item acara" onclick="zoomImage(this)">
 <img src="galeri3.jpeg">
 <div class="caption">Kebersamaan Siswa</div>
 </div>
 
-<div class="item" onclick="zoomImage(this)">
+<div class="item acara" onclick="zoomImage(this)">
 <img src="galeri4.jpeg">
 <div class="caption">Seminar Pendidikan</div>
 </div>
 
-<div class="item" onclick="zoomImage(this)">
+<!-- EKSTRA -->
+
+<div class="item ekstra" onclick="zoomImage(this)">
 <img src="galeri5.jpeg">
 <div class="caption">Kegiatan Pramuka</div>
 </div>
 
-<div class="item" onclick="zoomImage(this)">
+<!-- LOMBA -->
+
+<div class="item lomba" onclick="zoomImage(this)">
 <img src="galeri6.jpeg">
 <div class="caption">Prestasi Madrasah</div>
+</div>
+
+<!-- ALUMNI -->
+
+<div class="item alumni" onclick="zoomImage(this)">
+<img src="galeri7.jpeg">
+<div class="caption">Kegiatan Alumni</div>
+</div>
+
+<div class="item alumni" onclick="zoomImage(this)">
+<img src="galeri8.jpeg">
+<div class="caption">Silaturahmi Alumni</div>
 </div>
 
 </div>
@@ -369,7 +372,7 @@ Alumni
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
-<!-- ===== ZOOM ===== -->
+<!-- ===== ZOOM FOTO ===== -->
 
 <div class="zoom-box" id="zoomBox" onclick="closeZoom()">
 
@@ -379,16 +382,18 @@ Alumni
 
 <script>
 
-function filterGallery(category){
+// ===== FILTER =====
+
+function filterGallery(category, btn){
 
 const items = document.querySelectorAll('.item');
 const buttons = document.querySelectorAll('.filter-menu button');
 
-buttons.forEach(btn=>{
-btn.classList.remove('active');
+buttons.forEach(button=>{
+button.classList.remove('active');
 });
 
-event.target.classList.add('active');
+btn.classList.add('active');
 
 items.forEach(item=>{
 
@@ -406,11 +411,7 @@ item.style.display = 'none';
 
 }
 
-</script>
-  
-<script src="script.js"></script>
-
-<script>
+// ===== ZOOM FOTO =====
 
 function zoomImage(el){
 
@@ -430,9 +431,7 @@ document.getElementById("zoomBox").style.display = "none";
 
 </script>
 
+<script src="script.js"></script>
+
 </body>
 </html>
-
-
-
-
