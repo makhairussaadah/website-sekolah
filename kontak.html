@@ -5,84 +5,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kontak | MA Khairussa'adah Kubu</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
+
+/* ===== HERO ===== */
+
 .hero-kontak{
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
-background:linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
-url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80');
+background:
+linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
+url('kontak.jpeg');
 background-size:cover;
 background-position:center;
 color:white;
 }
 
 .hero-kontak h1{
-font-size:46px;
+font-size:52px;
 margin-bottom:15px;
+animation:fadeUp 1s ease;
 }
+
+.hero-kontak p{
+font-size:20px;
+opacity:0.95;
+animation:fadeUp 1.3s ease;
+}
+
+/* ===== GRID ===== */
 
 .kontak-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:30px;
 padding:20px 0;
 }
 
+/* ===== BOX ===== */
+
 .box-kontak{
 background:white;
-padding:30px;
-border-radius:22px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+padding:35px;
+border-radius:26px;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+animation:fadeUp 1s ease;
+}
+
+.box-kontak:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 35px rgba(0,0,0,0.12);
 }
 
 .box-kontak h2{
-margin-bottom:18px;
+margin-bottom:22px;
+font-size:28px;
+color:#0b7a39;
 }
 
+/* ===== INFO ===== */
+
 .info-line{
-margin-bottom:14px;
+margin-bottom:18px;
 line-height:1.8;
+font-size:16px;
+color:#444;
 }
+
+.info-line b{
+color:#111;
+}
+
+/* ===== BUTTON ===== */
 
 .wa-btn{
 display:inline-block;
-margin-top:15px;
-padding:14px 24px;
+margin-top:20px;
+padding:15px 28px;
 background:#0f9d58;
 color:white;
 text-decoration:none;
 border-radius:50px;
 font-weight:bold;
 transition:0.3s;
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
 }
 
 .wa-btn:hover{
-transform:translateY(-4px);
+transform:translateY(-4px) scale(1.03);
 }
+
+/* ===== FORM ===== */
+
+.form-input{
+width:100%;
+padding:15px;
+border:1px solid #ddd;
+border-radius:14px;
+margin-bottom:15px;
+font-size:15px;
+font-family:'Poppins',sans-serif;
+outline:none;
+transition:0.3s;
+}
+
+.form-input:focus{
+border-color:#0b7a39;
+box-shadow:0 0 0 4px rgba(11,122,57,0.1);
+}
+
+textarea.form-input{
+resize:none;
+height:140px;
+}
+
+.btn-kirim{
+width:100%;
+padding:15px;
+border:none;
+background:#0b7a39;
+color:white;
+font-size:16px;
+font-weight:bold;
+border-radius:14px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-kirim:hover{
+transform:translateY(-3px);
+background:#09652f;
+}
+
+/* ===== MAP ===== */
 
 iframe{
 width:100%;
 height:350px;
 border:none;
-border-radius:18px;
+border-radius:20px;
+margin-top:15px;
 }
+
+/* ===== JAM ===== */
+
+.jam-box{
+margin-top:25px;
+padding:18px;
+border-radius:18px;
+background:#eef8f1;
+line-height:1.8;
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.hero-kontak{
+padding:90px 20px;
+}
+
+.hero-kontak h1{
+font-size:38px;
+}
+
+.hero-kontak p{
+font-size:17px;
+}
+
+.box-kontak{
+padding:25px;
+}
+
+}
+
 </style>
 
 </head>
+
 <body>
 
 <header>
+
 <nav class="navbar">
 
 <a href="index.html" class="brand">
+
 <img src="logo.png" class="logo">
+
 <div>
 <b>MA Khairussa'adah</b>
 <span>Kubu</span>
 </div>
+
 </a>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -96,67 +229,129 @@ border-radius:18px;
 </ul>
 
 </nav>
+
 </header>
-  
+
+<!-- HERO -->
+
 <section class="hero-kontak">
+
 <h1>Hubungi Kami</h1>
-<p>Informasi Kontak Resmi Madrasah</p>
+
+<p>
+Informasi Resmi dan Layanan MA Khairussa'adah Kubu
+</p>
+
 </section>
+
+<!-- CONTENT -->
 
 <section class="container">
 
 <div class="kontak-grid">
 
+<!-- INFO -->
+
 <div class="box-kontak">
+
 <h2>Informasi Sekolah</h2>
 
 <div class="info-line">
-<b>Alamat:</b><br>
+<b>📍 Alamat:</b><br>
 Dusun Setia Usaha, RT.004/RW.004,<br>
-Desa Kubu, Kec. Kubu,<br>
-Kab. Kubu Raya
+Desa Kubu, Kecamatan Kubu,<br>
+Kabupaten Kubu Raya
 </div>
 
 <div class="info-line">
-<b>Kepala Madrasah:</b><br>
+<b>👨‍🏫 Kepala Madrasah:</b><br>
 Fahkrurrezi Umam, S.Pd.
 </div>
 
 <div class="info-line">
-<b>WhatsApp:</b><br>
+<b>📱 WhatsApp:</b><br>
 +62 812-3324-6744
 </div>
 
 <div class="info-line">
-<b>Instagram:</b><br>
+<b>📷 Instagram:</b><br>
 @galery_mts_ma_kubu
 </div>
 
 <div class="info-line">
-<b>Facebook:</b><br>
-@MAS Khairussa'adah Kubu
-</div>
-  
-<div class="info-line">
-<b>Youtube:</b><br>
-@MAS Khairussa'adah Kubu
+<b>📘 Facebook:</b><br>
+MAS Khairussa'adah Kubu
 </div>
 
-<a href="https://wa.me/6281233246744" target="_blank" class="wa-btn">
-Chat WhatsApp
+<div class="info-line">
+<b>▶ Youtube:</b><br>
+MAS Khairussa'adah Kubu
+</div>
+
+<div class="jam-box">
+
+<b>🕘 Jam Pelayanan</b><br>
+
+Senin - Sabtu : 08.00 - 12.00 WIB
+
+</div>
+
+<a href="https://wa.me/6281233246744"
+target="_blank"
+class="wa-btn">
+
+💬 Chat WhatsApp
+
 </a>
 
 </div>
 
-<div class="box-kontak">
-<h2>Lokasi Maps</h2>
+<!-- FORM -->
 
-<iframe 
+<div class="box-kontak">
+
+<h2>Kirim Pesan</h2>
+
+<form onsubmit="kirimWA(event)">
+
+<input type="text"
+id="nama"
+class="form-input"
+placeholder="Nama Lengkap"
+required>
+
+<input type="text"
+id="wa"
+class="form-input"
+placeholder="Nomor WhatsApp"
+required>
+
+<textarea
+id="pesan"
+class="form-input"
+placeholder="Tulis pesan Anda..."
+required></textarea>
+
+<button type="submit" class="btn-kirim">
+Kirim Pesan
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- MAP -->
+
+<div class="box-kontak" style="margin-top:30px;">
+
+<h2>Lokasi Madrasah</h2>
+
+<iframe
 src="https://www.google.com/maps?q=Desa%20Kubu%20Kubu%20Raya&output=embed"
 loading="lazy">
 </iframe>
-
-</div>
 
 </div>
 
@@ -166,8 +361,37 @@ loading="lazy">
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
-  <script src="script.js"></script>
-  
+<script src="script.js"></script>
+
+<script>
+
+function kirimWA(event){
+
+event.preventDefault();
+
+const nama = document.getElementById("nama").value;
+const wa = document.getElementById("wa").value;
+const pesan = document.getElementById("pesan").value;
+
+const nomorAdmin = "6281233246744";
+
+const text =
+`Assalamu'alaikum, saya ingin menghubungi MA Khairussa'adah Kubu.
+
+Nama: ${nama}
+No WhatsApp: ${wa}
+
+Pesan:
+${pesan}`;
+
+const url =
+`https://wa.me/${nomorAdmin}?text=${encodeURIComponent(text)}`;
+
+window.open(url, '_blank');
+
+}
+
+</script>
+
 </body>
 </html>
-
