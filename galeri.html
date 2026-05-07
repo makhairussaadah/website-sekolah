@@ -1,18 +1,22 @@
-<!-- FILE: galeri.html -->
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Galeri | MA Khairussa'adah Kubu</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
+
+/* ===== HERO ===== */
+
 .hero-galeri{
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
-background:linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
+background:
+linear-gradient(rgba(0,80,40,0.75),rgba(0,60,30,0.85)),
 url('galery.jpeg');
 background-size:cover;
 background-position:center;
@@ -20,22 +24,87 @@ color:white;
 }
 
 .hero-galeri h1{
-font-size:46px;
+font-size:52px;
 margin-bottom:15px;
+animation:fadeUp 1s ease;
 }
+
+.hero-galeri p{
+font-size:20px;
+opacity:0.95;
+animation:fadeUp 1.3s ease;
+}
+
+/* ===== RUNNING TEXT ===== */
+
+.run-text{
+white-space:nowrap;
+overflow:hidden;
+background:#0b7a39;
+color:white;
+padding:12px;
+margin-top:10px;
+font-weight:600;
+}
+
+.run-text span{
+display:inline-block;
+padding-left:100%;
+animation:jalan 15s linear infinite;
+}
+
+@keyframes jalan{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-100%);
+}
+}
+
+/* ===== FILTER ===== */
+
+.filter{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-bottom:35px;
+}
+
+.filter button{
+padding:12px 22px;
+border:none;
+border-radius:40px;
+background:#fff;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.filter button:hover{
+background:#0b7a39;
+color:white;
+transform:translateY(-3px);
+}
+
+/* ===== GALLERY ===== */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 padding:20px 0;
 }
 
 .item{
 position:relative;
 overflow:hidden;
-border-radius:22px;
+border-radius:24px;
 box-shadow:0 12px 30px rgba(0,0,0,0.12);
+cursor:pointer;
+animation:fadeUp 1s ease;
 }
 
 .item img{
@@ -49,50 +118,125 @@ transition:0.6s ease;
 transform:scale(1.12);
 }
 
+.item:hover{
+transform:translateY(-6px);
+transition:0.3s;
+}
+
 .caption{
 position:absolute;
 bottom:0;
 left:0;
 right:0;
-padding:18px;
+padding:20px;
 color:white;
 font-weight:bold;
-background:linear-gradient(transparent,rgba(0,0,0,0.8));
+font-size:18px;
+background:linear-gradient(transparent,rgba(0,0,0,0.85));
 }
 
-.run-text{
-white-space:nowrap;
-overflow:hidden;
-background:#0b7a39;
-color:white;
-padding:10px;
-margin-top:10px;
+/* ===== ZOOM ===== */
+
+.zoom-box{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+padding:20px;
+animation:fade 0.3s ease;
 }
 
-.run-text span{
-display:inline-block;
-padding-left:100%;
-animation:jalan 15s linear infinite;
+.zoom-box img{
+max-width:95%;
+max-height:95%;
+border-radius:20px;
+animation:zoomIn 0.3s ease;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-@keyframes jalan{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
+/* ===== ANIMATION ===== */
+
+@keyframes zoomIn{
+from{
+transform:scale(0.7);
+opacity:0;
 }
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.hero-galeri{
+padding:90px 20px;
+}
+
+.hero-galeri h1{
+font-size:36px;
+}
+
+.hero-galeri p{
+font-size:17px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.item img{
+height:230px;
+}
+
+}
+
 </style>
-
 </head>
+
 <body>
 
 <header>
+
 <nav class="navbar">
 
 <a href="index.html" class="brand">
+
 <img src="logo.png" class="logo">
+
 <div>
 <b>MA Khairussa'adah</b>
 <span>Kubu</span>
 </div>
+
 </a>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -106,39 +250,77 @@ animation:jalan 15s linear infinite;
 </ul>
 
 </nav>
+
 </header>
 
+<!-- HERO -->
+
 <section class="hero-galeri">
+
 <h1>Galeri Kegiatan</h1>
-<p>Dokumentasi Aktivitas dan Prestasi Madrasah</p>
+
+<p>
+Dokumentasi Aktivitas dan Prestasi Madrasah
+</p>
+
 </section>
 
+<!-- RUN TEXT -->
+
 <div class="run-text">
-<span>✨ Belajar Bersama ✨ Upacara ✨ Lomba ✨ Kegiatan Islami ✨ Prestasi Siswa ✨</span>
+<span>
+✨ Belajar Bersama ✨ Upacara ✨ Lomba ✨ Kegiatan Islami ✨ Prestasi Siswa ✨ Pramuka ✨ Class Meeting ✨
+</span>
 </div>
+
+<!-- CONTENT -->
 
 <section class="container">
 
+<!-- FILTER -->
+
+<div class="filter">
+
+<button>Semua</button>
+<button>Kegiatan</button>
+<button>Pramuka</button>
+<button>Prestasi</button>
+<button>Acara</button>
+
+</div>
+
+<!-- GALLERY -->
+
 <div class="gallery">
 
-<div class="item">
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80">
+<div class="item" onclick="zoomImage(this)">
+<img src="galeri1.jpeg">
 <div class="caption">Kegiatan Belajar</div>
 </div>
 
-<div class="item">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80">
+<div class="item" onclick="zoomImage(this)">
+<img src="galeri2.jpeg">
 <div class="caption">Diskusi Siswa</div>
 </div>
 
-<div class="item">
-<img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=80">
-<div class="caption">Kebersamaan</div>
+<div class="item" onclick="zoomImage(this)">
+<img src="galeri3.jpeg">
+<div class="caption">Kebersamaan Siswa</div>
 </div>
 
-<div class="item">
-<img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1000&q=80">
+<div class="item" onclick="zoomImage(this)">
+<img src="galeri4.jpeg">
 <div class="caption">Seminar Pendidikan</div>
+</div>
+
+<div class="item" onclick="zoomImage(this)">
+<img src="galeri5.jpeg">
+<div class="caption">Kegiatan Pramuka</div>
+</div>
+
+<div class="item" onclick="zoomImage(this)">
+<img src="galeri6.jpeg">
+<div class="caption">Prestasi Madrasah</div>
 </div>
 
 </div>
@@ -149,7 +331,35 @@ animation:jalan 15s linear infinite;
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
-  <script src="script.js"></script>
-  
+<!-- ===== ZOOM ===== -->
+
+<div class="zoom-box" id="zoomBox" onclick="closeZoom()">
+
+<img id="zoomImg">
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+function zoomImage(el){
+
+const img = el.querySelector("img").src;
+
+document.getElementById("zoomImg").src = img;
+
+document.getElementById("zoomBox").style.display = "flex";
+
+}
+
+function closeZoom(){
+
+document.getElementById("zoomBox").style.display = "none";
+
+}
+
+</script>
+
 </body>
 </html>
