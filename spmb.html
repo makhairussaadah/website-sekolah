@@ -594,9 +594,9 @@ D. Data Ayah
 </div>
 
 <div class="form-group">
-<label>Agama</label>
+<label>Agama Ayah</label>
 
-<select name="agama" onchange="toggleInput(this,'agamaLainnya')">
+<select onchange="toggleInput(this,'agamaAyahLainnya')">
 <option value="">Pilih Agama</option>
 <option>Islam</option>
 <option>Kristen</option>
@@ -609,20 +609,17 @@ D. Data Ayah
 
 <input
 type="text"
-id="agamaLainnya"
+id="agamaAyahLainnya"
 placeholder="Tulis agama lainnya"
 style="display:none;margin-top:10px;"
 >
 
 </div>
-  
+
 <div class="form-group">
 <label>Pekerjaan Ayah</label>
 
-<select
-name="pekerjaanAyah"
-onchange="toggleInput(this,'pekerjaanAyahLainnya')"
->
+<select onchange="toggleInput(this,'pekerjaanAyahLainnya')">
 <option value="">Pilih Pekerjaan</option>
 <option>PNS/ASN</option>
 <option>TNI/Polri</option>
@@ -646,10 +643,7 @@ style="display:none;margin-top:10px;"
 <div class="form-group">
 <label>Penghasilan Ayah</label>
 
-<select
-name="penghasilanAyah"
-onchange="toggleInput(this,'penghasilanAyahLainnya')"
->
+<select onchange="toggleInput(this,'penghasilanAyahLainnya')">
 <option value="">Pilih Penghasilan</option>
 <option>< Rp 1.000.000</option>
 <option>Rp 1.000.000 - Rp 2.000.000</option>
@@ -665,6 +659,7 @@ style="display:none;margin-top:10px;"
 >
 
 </div>
+
 <div class="form-group">
 <label>Status Ayah</label>
 
@@ -708,9 +703,9 @@ E. Data Ibu
 </div>
 
 <div class="form-group">
-<label>Agama</label>
+<label>Agama Ibu</label>
 
-<select name="agama" onchange="toggleInput(this,'agamaLainnya')">
+<select onchange="toggleInput(this,'agamaIbuLainnya')">
 <option value="">Pilih Agama</option>
 <option>Islam</option>
 <option>Kristen</option>
@@ -723,20 +718,17 @@ E. Data Ibu
 
 <input
 type="text"
-id="agamaLainnya"
+id="agamaIbuLainnya"
 placeholder="Tulis agama lainnya"
 style="display:none;margin-top:10px;"
 >
 
 </div>
-  
+
 <div class="form-group">
 <label>Pekerjaan Ibu</label>
 
-<select
-name="pekerjaanAyah"
-onchange="toggleInput(this,'pekerjaanIbuLainnya')"
->
+<select onchange="toggleInput(this,'pekerjaanIbuLainnya')">
 <option value="">Pilih Pekerjaan</option>
 <option>PNS/ASN</option>
 <option>TNI/Polri</option>
@@ -761,10 +753,7 @@ style="display:none;margin-top:10px;"
 <div class="form-group">
 <label>Penghasilan Ibu</label>
 
-<select
-name="penghasilanIbu"
-onchange="toggleInput(this,'penghasilanIbuLainnya')"
->
+<select onchange="toggleInput(this,'penghasilanIbuLainnya')">
 <option value="">Pilih Penghasilan</option>
 <option>< Rp 1.000.000</option>
 <option>Rp 1.000.000 - Rp 2.000.000</option>
@@ -835,11 +824,8 @@ F. Data Wali
 
 <div class="form-group">
 <label>Agama Wali</label>
-  
-<select
-name="agamaWali"
-onchange="toggleInput(this,'agamaWaliLainnya')"
->
+
+<select onchange="toggleInput(this,'agamaWaliLainnya')">
 <option value="">Pilih Agama</option>
 <option>Islam</option>
 <option>Kristen</option>
@@ -857,13 +843,12 @@ placeholder="Tulis agama lainnya"
 style="display:none;margin-top:10px;"
 >
 
+</div>
+
 <div class="form-group">
 <label>Pekerjaan Wali</label>
-  
-<select
-name="pekerjaanWali"
-onchange="toggleInput(this,'pekerjaanWaliLainnya')"
->
+
+<select onchange="toggleInput(this,'pekerjaanWaliLainnya')">
 <option value="">Pilih Pekerjaan</option>
 <option>PNS/ASN</option>
 <option>TNI/Polri</option>
@@ -882,13 +867,12 @@ placeholder="Tulis pekerjaan lainnya"
 style="display:none;margin-top:10px;"
 >
 
+</div>
+
 <div class="form-group">
 <label>Penghasilan Wali</label>
 
-<select
-name="penghasilanWali"
-onchange="toggleInput(this,'penghasilanWaliLainnya')"
->
+<select onchange="toggleInput(this,'penghasilanWaliLainnya')">
 <option value="">Pilih Penghasilan</option>
 <option>< Rp 1.000.000</option>
 <option>Rp 1.000.000 - Rp 2.000.000</option>
@@ -911,7 +895,6 @@ style="display:none;margin-top:10px;"
 <label>Alamat Wali</label>
 <textarea rows="4" name="alamatWali"></textarea>
 </div>
-
 <!-- ===================== -->
 <!-- G UPLOAD -->
 <!-- ===================== -->
