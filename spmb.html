@@ -351,6 +351,10 @@ Silakan isi formulir dengan lengkap dan benar
 
 <form id="formSPMB" class="form-spmb">
 
+<!-- ===================== -->
+<!-- A DATA SISWA -->
+<!-- ===================== -->
+
 <h3 class="section-title">
 A. Data Calon Peserta Didik
 </h3>
@@ -359,83 +363,103 @@ A. Data Calon Peserta Didik
 
 <div class="form-group">
 <label>Nama Lengkap</label>
-<input type="text" required>
+<input type="text" name="nama" required>
 </div>
 
 <div class="form-group">
 <label>Nama Panggilan</label>
-<input type="text">
+<input type="text" name="panggilan">
 </div>
 
 <div class="form-group">
 <label>Jenis Kelamin</label>
-<select>
+
+<select name="jk">
 <option>Laki-laki</option>
 <option>Perempuan</option>
 </select>
+
 </div>
 
 <div class="form-group">
 <label>Tempat Lahir</label>
-<input type="text">
+<input type="text" name="tempat">
 </div>
 
 <div class="form-group">
 <label>Tanggal Lahir</label>
-<input type="date">
+<input type="date" name="tanggal">
 </div>
 
 <div class="form-group">
 <label>NIK</label>
-<input type="text">
+<input type="text" name="nik">
 </div>
 
 <div class="form-group">
 <label>NISN</label>
-<input type="text">
+<input type="text" name="nisn">
 </div>
 
 <div class="form-group">
 <label>Agama</label>
-<select>
+
+<select name="agama">
 <option>Islam</option>
 <option>Kristen</option>
 <option>Katolik</option>
 <option>Hindu</option>
 <option>Buddha</option>
 </select>
+
 </div>
 
 <div class="form-group">
 <label>Anak Ke</label>
-<input type="number">
+<input type="number" name="anakKe">
 </div>
 
 <div class="form-group">
 <label>Status Dalam Keluarga</label>
-<select>
+
+<select name="statusKeluarga">
 <option>Anak Kandung</option>
 <option>Anak Tiri</option>
 <option>Anak Angkat</option>
 </select>
+
 </div>
 
 <div class="form-group">
 <label>Jumlah Saudara Kandung</label>
-<input type="number">
+<input type="number" name="saudaraKandung">
+</div>
+
+<div class="form-group">
+<label>Jumlah Saudara Tiri</label>
+<input type="number" name="saudaraTiri">
+</div>
+
+<div class="form-group">
+<label>Jumlah Saudara Angkat</label>
+<input type="number" name="saudaraAngkat">
 </div>
 
 <div class="form-group">
 <label>No HP / WhatsApp</label>
-<input type="text">
+<input type="text" name="hp">
 </div>
 
 </div>
 
 <div class="form-group">
 <label>Alamat Tempat Tinggal</label>
-<textarea rows="4"></textarea>
+<textarea rows="4" name="alamat"></textarea>
 </div>
+
+<!-- ===================== -->
+<!-- B SEKOLAH ASAL -->
+<!-- ===================== -->
 
 <h3 class="section-title">
 B. Sekolah Asal
@@ -445,41 +469,240 @@ B. Sekolah Asal
 
 <div class="form-group">
 <label>Masuk Sebagai</label>
-<select>
+
+<select name="masukSebagai">
 <option>Siswa Baru Kelas X</option>
 <option>Siswa Pindahan</option>
 </select>
+
 </div>
 
 <div class="form-group">
 <label>Nama Sekolah Asal</label>
-<input type="text">
+<input type="text" name="sekolahAsal">
 </div>
 
 <div class="form-group">
 <label>Tahun Lulus</label>
-<input type="text">
+<input type="text" name="tahunLulus">
 </div>
 
 <div class="form-group">
 <label>NPSN Sekolah Asal</label>
-<input type="text">
+<input type="text" name="npsn">
 </div>
 
 <div class="form-group">
 <label>Nomor Ijazah / SKL</label>
-<input type="text">
+<input type="text" name="ijazah">
 </div>
 
 </div>
 
 <div class="form-group">
 <label>Alamat Sekolah Asal</label>
-<textarea rows="4"></textarea>
+<textarea rows="4" name="alamatSekolah"></textarea>
 </div>
 
+<!-- ===================== -->
+<!-- C BAKAT -->
+<!-- ===================== -->
+
 <h3 class="section-title">
-C. Upload Berkas
+C. Bakat dan Minat
+</h3>
+
+<div class="grid-form">
+
+<div class="form-group">
+<label>Hobi</label>
+<input type="text" name="hobi">
+</div>
+
+<div class="form-group">
+<label>Bidang Studi Favorit</label>
+<input type="text" name="bidang">
+</div>
+
+<div class="form-group">
+<label>Olahraga Favorit</label>
+<input type="text" name="olahraga">
+</div>
+
+<div class="form-group">
+<label>Cita-cita</label>
+<input type="text" name="cita">
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- D AYAH -->
+<!-- ===================== -->
+
+<h3 class="section-title">
+D. Data Ayah
+</h3>
+
+<div class="grid-form">
+
+<div class="form-group">
+<label>Nama Lengkap Ayah</label>
+<input type="text" name="namaAyah">
+</div>
+
+<div class="form-group">
+<label>Tempat Lahir Ayah</label>
+<input type="text" name="tempatAyah">
+</div>
+
+<div class="form-group">
+<label>Tanggal Lahir Ayah</label>
+<input type="date" name="tanggalAyah">
+</div>
+
+<div class="form-group">
+<label>Pekerjaan Ayah</label>
+<input type="text" name="pekerjaanAyah">
+</div>
+
+<div class="form-group">
+<label>Penghasilan Ayah</label>
+<input type="text" name="penghasilanAyah">
+</div>
+
+<div class="form-group">
+<label>Status Ayah</label>
+
+<select name="statusAyah">
+<option>Masih Hidup</option>
+<option>Meninggal</option>
+</select>
+
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Alamat Ayah</label>
+<textarea rows="4" name="alamatAyah"></textarea>
+</div>
+
+<!-- ===================== -->
+<!-- E IBU -->
+<!-- ===================== -->
+
+<h3 class="section-title">
+E. Data Ibu
+</h3>
+
+<div class="grid-form">
+
+<div class="form-group">
+<label>Nama Lengkap Ibu</label>
+<input type="text" name="namaIbu">
+</div>
+
+<div class="form-group">
+<label>Tempat Lahir Ibu</label>
+<input type="text" name="tempatIbu">
+</div>
+
+<div class="form-group">
+<label>Tanggal Lahir Ibu</label>
+<input type="date" name="tanggalIbu">
+</div>
+
+<div class="form-group">
+<label>Pekerjaan Ibu</label>
+<input type="text" name="pekerjaanIbu">
+</div>
+
+<div class="form-group">
+<label>Penghasilan Ibu</label>
+<input type="text" name="penghasilanIbu">
+</div>
+
+<div class="form-group">
+<label>Status Ibu</label>
+
+<select name="statusIbu">
+<option>Masih Hidup</option>
+<option>Meninggal</option>
+</select>
+
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Alamat Ibu</label>
+<textarea rows="4" name="alamatIbu"></textarea>
+</div>
+
+<!-- ===================== -->
+<!-- F WALI -->
+<!-- ===================== -->
+
+<h3 class="section-title">
+F. Data Wali
+</h3>
+
+<div class="grid-form">
+
+<div class="form-group">
+<label>Nama Lengkap Wali</label>
+<input type="text" name="namaWali">
+</div>
+
+<div class="form-group">
+<label>Jenis Kelamin Wali</label>
+
+<select name="jkWali">
+<option>Laki-laki</option>
+<option>Perempuan</option>
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Tempat Lahir Wali</label>
+<input type="text" name="tempatWali">
+</div>
+
+<div class="form-group">
+<label>Tanggal Lahir Wali</label>
+<input type="date" name="tanggalWali">
+</div>
+
+<div class="form-group">
+<label>Agama Wali</label>
+<input type="text" name="agamaWali">
+</div>
+
+<div class="form-group">
+<label>Pekerjaan Wali</label>
+<input type="text" name="pekerjaanWali">
+</div>
+
+<div class="form-group">
+<label>Penghasilan Perbulan</label>
+<input type="text" name="penghasilanWali">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Alamat Wali</label>
+<textarea rows="4" name="alamatWali"></textarea>
+</div>
+
+<!-- ===================== -->
+<!-- G UPLOAD -->
+<!-- ===================== -->
+
+<h3 class="section-title">
+G. Upload Berkas Persyaratan
 </h3>
 
 <div class="grid-form">
@@ -505,7 +728,7 @@ C. Upload Berkas
 </div>
 
 <div class="upload-box">
-<label>Pas Foto</label>
+<label>Pass Foto</label>
 <input type="file">
 </div>
 
