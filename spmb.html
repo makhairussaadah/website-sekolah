@@ -1172,6 +1172,19 @@ document.getElementById("zoomBox").style.display="none";
 
 }
 
+function toggleInput(select,id){
+
+const input = document.getElementById(id);
+
+if(select.value === "Lainnya"){
+input.style.display = "block";
+}else{
+input.style.display = "none";
+input.value = "";
+}
+
+}
+  
 </script>
 
 </body>
