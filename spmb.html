@@ -9,6 +9,13 @@
 
 <style>
 
+body{
+background:#f5f7f5;
+font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+}
+
 .hero-spmb{
 padding:90px 20px;
 text-align:center;
@@ -53,6 +60,12 @@ min-width:70px;
 }
 
 /* ===== BOX ===== */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
 
 .box{
 background:white;
@@ -99,6 +112,70 @@ transition:0.3s;
 
 .btn-daftar:hover{
 transform:translateY(-3px);
+}
+
+/* ===== FORM ===== */
+
+.section-title{
+margin-top:40px;
+margin-bottom:20px;
+padding-bottom:10px;
+border-bottom:2px solid #e5e5e5;
+color:#0b7a39;
+}
+
+.form-spmb input,
+.form-spmb select,
+.form-spmb textarea{
+width:100%;
+padding:14px;
+border:1px solid #dcdcdc;
+border-radius:12px;
+margin-top:8px;
+font-size:15px;
+box-sizing:border-box;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+.grid-form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.upload-box{
+background:#f8f8f8;
+padding:18px;
+border-radius:14px;
+}
+
+.draft-btn,
+.submit-btn,
+.print-btn{
+padding:14px 24px;
+border:none;
+border-radius:50px;
+font-weight:bold;
+cursor:pointer;
+margin-right:10px;
+margin-top:10px;
+}
+
+.draft-btn{
+background:#ffd54a;
+}
+
+.submit-btn{
+background:#0f9d58;
+color:white;
+}
+
+.print-btn{
+background:#2563eb;
+color:white;
 }
 
 /* ===== BROSUR ===== */
@@ -154,6 +231,10 @@ font-size:22px;
 .angka{
 padding:8px 12px;
 min-width:60px;
+}
+
+.grid-form{
+grid-template-columns:1fr;
 }
 
 }
@@ -258,21 +339,206 @@ Klik brosur untuk memperbesar
 
 </div>
 
+<!-- FORMULIR -->
+
 <div class="box">
 
-<h2>Daftar Online</h2>
+<h2>Formulir Pendaftaran Online</h2>
 
-<p>
-Isi formulir pendaftaran secara online dengan mudah
+<p style="margin-bottom:25px;">
+Silakan isi formulir dengan lengkap dan benar
 </p>
 
-<a 
-href="https://forms.gle/Lwj21sbvqZpv3UbU6"
-target="_blank"
-class="btn-daftar"
+<form id="formSPMB" class="form-spmb">
+
+<h3 class="section-title">
+A. Data Calon Peserta Didik
+</h3>
+
+<div class="grid-form">
+
+<div class="form-group">
+<label>Nama Lengkap</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Nama Panggilan</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Jenis Kelamin</label>
+<select>
+<option>Laki-laki</option>
+<option>Perempuan</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Tempat Lahir</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Tanggal Lahir</label>
+<input type="date">
+</div>
+
+<div class="form-group">
+<label>NIK</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>NISN</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Agama</label>
+<select>
+<option>Islam</option>
+<option>Kristen</option>
+<option>Katolik</option>
+<option>Hindu</option>
+<option>Buddha</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Anak Ke</label>
+<input type="number">
+</div>
+
+<div class="form-group">
+<label>Status Dalam Keluarga</label>
+<select>
+<option>Anak Kandung</option>
+<option>Anak Tiri</option>
+<option>Anak Angkat</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Jumlah Saudara Kandung</label>
+<input type="number">
+</div>
+
+<div class="form-group">
+<label>No HP / WhatsApp</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Alamat Tempat Tinggal</label>
+<textarea rows="4"></textarea>
+</div>
+
+<h3 class="section-title">
+B. Sekolah Asal
+</h3>
+
+<div class="grid-form">
+
+<div class="form-group">
+<label>Masuk Sebagai</label>
+<select>
+<option>Siswa Baru Kelas X</option>
+<option>Siswa Pindahan</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Nama Sekolah Asal</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Tahun Lulus</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>NPSN Sekolah Asal</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Nomor Ijazah / SKL</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Alamat Sekolah Asal</label>
+<textarea rows="4"></textarea>
+</div>
+
+<h3 class="section-title">
+C. Upload Berkas
+</h3>
+
+<div class="grid-form">
+
+<div class="upload-box">
+<label>Ijazah / SKL</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Akta Kelahiran</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Raport Terakhir</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Kartu PIP</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Pas Foto</label>
+<input type="file">
+</div>
+
+</div>
+
+<div style="margin-top:35px;">
+
+<button
+type="button"
+class="draft-btn"
+onclick="saveDraft()"
 >
-Daftar Sekarang
-</a>
+Simpan Draft
+</button>
+
+<button
+type="submit"
+class="submit-btn"
+>
+Kirim Pendaftaran
+</button>
+
+<button
+type="button"
+class="print-btn"
+onclick="window.print()"
+>
+Cetak Bukti
+</button>
+
+</div>
+
+</form>
 
 </div>
 
@@ -296,7 +562,7 @@ Chat WhatsApp
 
 </section>
 
-<footer>
+<footer style="text-align:center;padding:30px 20px;">
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
@@ -336,6 +602,24 @@ function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
 
+// ===== SAVE DRAFT =====
+
+function saveDraft(){
+
+alert("Draft berhasil disimpan");
+
+}
+
+// ===== FORM SUBMIT =====
+
+document.getElementById("formSPMB").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Pendaftaran berhasil dikirim");
+
+});
+
 // ===== COUNTDOWN =====
 
 const gel1Mulai = new Date("June 22, 2026 08:00:00").getTime();
@@ -355,8 +639,6 @@ setInterval(function(){
 const now = new Date().getTime();
 
 let text = "";
-
-// GEL 1
 
 if(now < gel1Mulai){
 
@@ -389,15 +671,11 @@ Detik
 
 }
 
-// GEL 1 ACTIVE
-
 else if(now >= gel1Mulai && now <= gel1Akhir){
 
 text = "🔥 Gelombang 1 Sedang Dibuka";
 
 }
-
-// MENUJU GEL 2
 
 else if(now < gel2Mulai){
 
@@ -430,15 +708,11 @@ Detik
 
 }
 
-// GEL 2 ACTIVE
-
 else if(now >= gel2Mulai && now <= gel2Akhir){
 
 text = "🟢 Gelombang 2 Sedang Dibuka";
 
 }
-
-// CLOSED
 
 else{
 
