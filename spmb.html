@@ -37,6 +37,25 @@ font-size:20px;
 opacity:0.95;
 }
 
+// ===== INPUT LAINNYA =====
+
+function toggleInput(select,inputId){
+
+const input = document.getElementById(inputId);
+
+if(select.value === "Lainnya"){
+
+input.style.display = "block";
+
+}else{
+
+input.style.display = "none";
+input.value = "";
+
+}
+
+}
+  
 /* ===== COUNTDOWN ===== */
 
 .countdown{
@@ -404,13 +423,26 @@ A. Data Calon Peserta Didik
 <div class="form-group">
 <label>Agama</label>
 
-<select name="agama">
+<select
+name="agama"
+onchange="toggleInput(this,'agamaLainnya')"
+>
+<option value="">Pilih Agama</option>
 <option>Islam</option>
 <option>Kristen</option>
 <option>Katolik</option>
 <option>Hindu</option>
 <option>Buddha</option>
+<option>Konghucu</option>
+<option value="Lainnya">Lainnya</option>
 </select>
+
+<input
+type="text"
+id="agamaLainnya"
+placeholder="Tulis agama lainnya"
+style="display:none;margin-top:10px;"
+>
 
 </div>
 
@@ -562,23 +594,77 @@ D. Data Ayah
 </div>
 
 <div class="form-group">
-<label>Pekerjaan Ayah</label>
-<input type="text" name="pekerjaanAyah">
-</div>
+<label>Agama</label>
 
-<select name="pekerjaanAyah">
+<select name="agama" onchange="toggleInput(this,'agamaLainnya')">
+<option value="">Pilih Agama</option>
+<option>Islam</option>
+<option>Kristen</option>
+<option>Katolik</option>
+<option>Hindu</option>
+<option>Buddha</option>
+<option>Konghucu</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="agamaLainnya"
+placeholder="Tulis agama lainnya"
+style="display:none;margin-top:10px;"
+>
+
+</div>
+  
+<div class="form-group">
+<label>Pekerjaan Ayah</label>
+
+<select
+name="pekerjaanAyah"
+onchange="toggleInput(this,'pekerjaanAyahLainnya')"
+>
+<option value="">Pilih Pekerjaan</option>
 <option>PNS/ASN</option>
 <option>TNI/Polri</option>
+<option>Guru/Dosen</option>
 <option>Pegawai Swasta</option>
 <option>Wiraswasta/Wirausaha</option>
 <option>Petani</option>
+<option>Pedagang</option>
+<option value="Lainnya">Lainnya</option>
 </select>
+
+<input
+type="text"
+id="pekerjaanAyahLainnya"
+placeholder="Tulis pekerjaan lainnya"
+style="display:none;margin-top:10px;"
+>
+
+</div>
 
 <div class="form-group">
 <label>Penghasilan Ayah</label>
-<input type="text" name="penghasilanAyah">
-</div>
 
+<select
+name="penghasilanAyah"
+onchange="toggleInput(this,'penghasilanAyahLainnya')"
+>
+<option value="">Pilih Penghasilan</option>
+<option>< Rp 1.000.000</option>
+<option>Rp 1.000.000 - Rp 2.000.000</option>
+<option>> Rp 2.000.000</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="penghasilanAyahLainnya"
+placeholder="Tulis penghasilan lainnya"
+style="display:none;margin-top:10px;"
+>
+
+</div>
 <div class="form-group">
 <label>Status Ayah</label>
 
@@ -622,13 +708,77 @@ E. Data Ibu
 </div>
 
 <div class="form-group">
-<label>Pekerjaan Ibu</label>
-<input type="text" name="pekerjaanIbu">
+<label>Agama</label>
+
+<select name="agama" onchange="toggleInput(this,'agamaLainnya')">
+<option value="">Pilih Agama</option>
+<option>Islam</option>
+<option>Kristen</option>
+<option>Katolik</option>
+<option>Hindu</option>
+<option>Buddha</option>
+<option>Konghucu</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="agamaLainnya"
+placeholder="Tulis agama lainnya"
+style="display:none;margin-top:10px;"
+>
+
+</div>
+  
+<div class="form-group">
+<label>Pekerjaan Ayah</label>
+
+<select
+name="pekerjaanAyah"
+onchange="toggleInput(this,'pekerjaanAyahLainnya')"
+>
+<option value="">Pilih Pekerjaan</option>
+<option>PNS/ASN</option>
+<option>TNI/Polri</option>
+<option>Guru/Dosen</option>
+<option>Pegawai Swasta</option>
+<option>Wiraswasta/Wirausaha</option>
+<option>Petani</option>
+<option>Pedagang</option>
+<option>Ibu Rumah Tangga</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="pekerjaanAyahLainnya"
+placeholder="Tulis pekerjaan lainnya"
+style="display:none;margin-top:10px;"
+>
+
 </div>
 
 <div class="form-group">
 <label>Penghasilan Ibu</label>
-<input type="text" name="penghasilanIbu">
+
+<select
+name="penghasilanIbu"
+onchange="toggleInput(this,'penghasilanIbuLainnya')"
+>
+<option value="">Pilih Penghasilan</option>
+<option>< Rp 1.000.000</option>
+<option>Rp 1.000.000 - Rp 2.000.000</option>
+<option>> Rp 2.000.000</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="penghasilanIbuLainnya"
+placeholder="Tulis penghasilan lainnya"
+style="display:none;margin-top:10px;"
+>
+
 </div>
 
 <div class="form-group">
@@ -683,19 +833,70 @@ F. Data Wali
 <input type="date" name="tanggalWali">
 </div>
 
-<div class="form-group">
-<label>Agama Wali</label>
-<input type="text" name="agamaWali">
-</div>
+<select
+name="agamaWali"
+onchange="toggleInput(this,'agamaWaliLainnya')"
+>
+<option value="">Pilih Agama</option>
+<option>Islam</option>
+<option>Kristen</option>
+<option>Katolik</option>
+<option>Hindu</option>
+<option>Buddha</option>
+<option>Konghucu</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="agamaWaliLainnya"
+placeholder="Tulis agama lainnya"
+style="display:none;margin-top:10px;"
+>
+
+<select
+name="pekerjaanWali"
+onchange="toggleInput(this,'pekerjaanWaliLainnya')"
+>
+<option value="">Pilih Pekerjaan</option>
+<option>PNS/ASN</option>
+<option>TNI/Polri</option>
+<option>Guru/Dosen</option>
+<option>Pegawai Swasta</option>
+<option>Wiraswasta/Wirausaha</option>
+<option>Petani</option>
+<option>Pedagang</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="pekerjaanWaliLainnya"
+placeholder="Tulis pekerjaan lainnya"
+style="display:none;margin-top:10px;"
+>
 
 <div class="form-group">
-<label>Pekerjaan Wali</label>
-<input type="text" name="pekerjaanWali">
-</div>
+<label>Penghasilan Wali</label>
 
-<div class="form-group">
-<label>Penghasilan Perbulan</label>
-<input type="text" name="penghasilanWali">
+<select
+name="penghasilanWali"
+onchange="toggleInput(this,'penghasilanWaliLainnya')"
+>
+<option value="">Pilih Penghasilan</option>
+<option>< Rp 1.000.000</option>
+<option>Rp 1.000.000 - Rp 2.000.000</option>
+<option>> Rp 2.000.000</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+
+<input
+type="text"
+id="penghasilanWaliLainnya"
+placeholder="Tulis penghasilan lainnya"
+style="display:none;margin-top:10px;"
+>
+
 </div>
 
 </div>
