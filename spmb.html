@@ -1033,11 +1033,57 @@ alert("Draft berhasil disimpan");
 
 // ===== FORM SUBMIT =====
 
-document.getElementById("formSPMB").addEventListener("submit",function(e){
+document.getElementById("formSPMB").addEventListener("submit", async function(e){
 
 e.preventDefault();
 
+const form = e.target;
+
+const data = {
+
+nama: form.nama.value,
+jk: form.jk.value,
+tempat: form.tempat.value,
+tanggal: form.tanggal.value,
+hp: form.hp.value,
+alamat: form.alamat.value,
+sekolahAsal: form.sekolahAsal.value,
+namaAyah: form.namaAyah.value,
+namaIbu: form.namaIbu.value
+
+};
+
+try{
+
+const response = await fetch("https://script.google.com/macros/s/AKfycbwL2p3zubggpoJAxBvQzvZlzxXenKIdcEzzA4mmv-qYJngeru-7EsYicQuphk6BMGNm/exec",{
+
+method:"POST",
+
+body:JSON.stringify(data)
+
+});
+
+const result = await response.json();
+
+if(result.result === "success"){
+
 alert("Pendaftaran berhasil dikirim");
+
+form.reset();
+
+}else{
+
+alert("Gagal mengirim data");
+
+}
+
+}catch(error){
+
+alert("Terjadi kesalahan");
+
+console.log(error);
+
+}
 
 });
 
