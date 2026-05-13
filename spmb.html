@@ -1026,110 +1026,38 @@ document.getElementById("menu").classList.toggle("show");
 // ===== SAVE DRAFT =====
 
 function saveDraft(){
-
 alert("Draft berhasil disimpan");
-
 }
 
-// ===== FORM SUBMIT =====
+// ===== TOGGLE INPUT LAINNYA =====
 
-document.getElementById("formSPMB").addEventListener("submit", async function(e){
+function toggleInput(select,id){
 
-e.preventDefault();
+const input = document.getElementById(id);
 
-const form = e.target;
-
-async function toBase64(file){
-
-return new Promise((resolve,reject)=>{
-
-const reader = new FileReader();
-
-reader.readAsDataURL(file);
-
-reader.onload = ()=>{
-
-resolve(reader.result.split(",")[1]);
-
-};
-
-reader.onerror = error => reject(error);
-
-});
-
-}
-
-const ijazahFile = form.ijazah.files[0];
-const aktaFile = form.akta.files[0];
-const raportFile = form.raport.files[0];
-const pipFile = form.pip.files[0];
-const fotoFile = form.foto.files[0];
-
-const data = {
-
-nama: form.nama.value,
-jk: form.jk.value,
-hp: form.hp.value,
-sekolahAsal: form.sekolahAsal.value,
-
-ijazahName: ijazahFile?.name || "",
-ijazahType: ijazahFile?.type || "",
-ijazahData: ijazahFile ? await toBase64(ijazahFile) : "",
-
-aktaName: aktaFile?.name || "",
-aktaType: aktaFile?.type || "",
-aktaData: aktaFile ? await toBase64(aktaFile) : "",
-
-raportName: raportFile?.name || "",
-raportType: raportFile?.type || "",
-raportData: raportFile ? await toBase64(raportFile) : "",
-
-pipName: pipFile?.name || "",
-pipType: pipFile?.type || "",
-pipData: pipFile ? await toBase64(pipFile) : "",
-
-fotoName: fotoFile?.name || "",
-fotoType: fotoFile?.type || "",
-fotoData: fotoFile ? await toBase64(fotoFile) : ""
-
-};
-
-const body = new URLSearchParams();
-
-body.append("data", JSON.stringify(data));
-
-try{
-
-const response = await fetch("https://script.google.com/macros/s/AKfycbytPF02zFEebtEHFV3JgdlyBi1F-7kBIG2IliZgtSHqn4nCsMhVMRouhWtZz-MEf7MN/exec",{
-
-method:"POST",
-body:body
-
-});
-
-const result = await response.json();
-
-if(result.result === "success"){
-
-alert("Pendaftaran berhasil dikirim");
-
-form.reset();
-
+if(select.value === "Lainnya"){
+input.style.display = "block";
 }else{
-
-alert("Gagal mengirim data");
+input.style.display = "none";
+input.value = "";
+}
 
 }
 
-}catch(error){
+// ===== ZOOM =====
 
-alert("Terjadi kesalahan");
+function zoomBrosur(src){
 
-console.log(error);
+document.getElementById("zoomBox").style.display = "flex";
+document.getElementById("zoomImg").src = src;
 
 }
 
-});
+function closeZoom(){
+
+document.getElementById("zoomBox").style.display = "none";
+
+}
 
 // ===== COUNTDOWN =====
 
@@ -1235,35 +1163,141 @@ el.innerHTML = text;
 
 },1000);
 
-// ===== ZOOM =====
+// ===== FORM SUBMIT =====
 
-function zoomBrosur(src){
+document.getElementById("formSPMB").addEventListener("submit", async function(e){
 
-document.getElementById("zoomBox").style.display="flex";
+e.preventDefault();
 
-document.getElementById("zoomImg").src=src;
+const form = e.target;
+
+const submitBtn = document.querySelector(".submit-btn");
+
+submitBtn.disabled = true;
+submitBtn.innerHTML = "Mengirim...";
+
+// ===== CONVERT FILE =====
+
+async function toBase64(file){
+
+return new Promise((resolve,reject)=>{
+
+const reader = new FileReader();
+
+reader.readAsDataURL(file);
+
+reader.onload = () => {
+resolve(reader.result.split(",")[1]);
+};
+
+reader.onerror = error => reject(error);
+
+});
 
 }
 
-function closeZoom(){
+// ===== FILE =====
 
-document.getElementById("zoomBox").style.display="none";
+const ijazahFile = form.ijazah.files[0];
+const aktaFile = form.akta.files[0];
+const raportFile = form.raport.files[0];
+const pipFile = form.pip.files[0];
+const fotoFile = form.foto.files[0];
 
+// ===== NOMOR PENDAFTARAN =====
+
+const nomor = "SPMB-" + Date.now();
+
+// ===== DATA =====
+
+const data = {
+
+nomor: nomor,
+
+nama: form.nama.value,
+panggilan: form.panggilan.value,
+jk: form.jk.value,
+tempat: form.tempat.value,
+tanggal: form.tanggal.value,
+nik: form.nik.value,
+nisn: form.nisn.value,
+hp: form.hp.value,
+alamat: form.alamat.value,
+
+sekolahAsal: form.sekolahAsal.value,
+tahunLulus: form.tahunLulus.value,
+npsn: form.npsn.value,
+
+namaAyah: form.namaAyah.value,
+namaIbu: form.namaIbu.value,
+namaWali: form.namaWali.value,
+
+ijazahName: ijazahFile?.name || "",
+ijazahType: ijazahFile?.type || "",
+ijazahData: ijazahFile ? await toBase64(ijazahFile) : "",
+
+aktaName: aktaFile?.name || "",
+aktaType: aktaFile?.type || "",
+aktaData: aktaFile ? await toBase64(aktaFile) : "",
+
+raportName: raportFile?.name || "",
+raportType: raportFile?.type || "",
+raportData: raportFile ? await toBase64(raportFile) : "",
+
+pipName: pipFile?.name || "",
+pipType: pipFile?.type || "",
+pipData: pipFile ? await toBase64(pipFile) : "",
+
+fotoName: fotoFile?.name || "",
+fotoType: fotoFile?.type || "",
+fotoData: fotoFile ? await toBase64(fotoFile) : ""
+
+};
+
+// ===== SEND =====
+
+const body = new URLSearchParams();
+body.append("data", JSON.stringify(data));
+
+try{
+
+const response = await fetch(
+"https://script.google.com/macros/s/AKfycbytPF02zFEebtEHFV3JgdlyBi1F-7kBIG2IliZgtSHqn4nCsMhVMRouhWtZz-MEf7MN/exec",
+{
+method:"POST",
+body:body
 }
+);
 
-function toggleInput(select,id){
+const result = await response.json();
 
-const input = document.getElementById(id);
+if(result.result === "success"){
 
-if(select.value === "Lainnya"){
-input.style.display = "block";
+alert(
+"Pendaftaran berhasil dikirim\n\nNomor Pendaftaran:\n" + nomor
+);
+
+form.reset();
+
 }else{
-input.style.display = "none";
-input.value = "";
-}
+
+alert("Gagal mengirim data");
 
 }
-  
+
+}catch(error){
+
+console.log(error);
+
+alert("Terjadi kesalahan saat mengirim");
+
+}
+
+submitBtn.disabled = false;
+submitBtn.innerHTML = "Kirim Pendaftaran";
+
+});
+
 </script>
 
 </body>
