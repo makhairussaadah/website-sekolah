@@ -9,13 +9,6 @@
 
 <style>
 
-body{
-background:#f5f7f5;
-font-family:Arial,sans-serif;
-margin:0;
-padding:0;
-}
-
 .hero-spmb{
 padding:90px 20px;
 text-align:center;
@@ -37,25 +30,6 @@ font-size:20px;
 opacity:0.95;
 }
 
-// ===== INPUT LAINNYA =====
-
-function toggleInput(select,inputId){
-
-const input = document.getElementById(inputId);
-
-if(select.value === "Lainnya"){
-
-input.style.display = "block";
-
-}else{
-
-input.style.display = "none";
-input.value = "";
-
-}
-
-}
-  
 /* ===== COUNTDOWN ===== */
 
 .countdown{
@@ -79,12 +53,6 @@ min-width:70px;
 }
 
 /* ===== BOX ===== */
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
 
 .box{
 background:white;
@@ -131,70 +99,6 @@ transition:0.3s;
 
 .btn-daftar:hover{
 transform:translateY(-3px);
-}
-
-/* ===== FORM ===== */
-
-.section-title{
-margin-top:40px;
-margin-bottom:20px;
-padding-bottom:10px;
-border-bottom:2px solid #e5e5e5;
-color:#0b7a39;
-}
-
-.form-spmb input,
-.form-spmb select,
-.form-spmb textarea{
-width:100%;
-padding:14px;
-border:1px solid #dcdcdc;
-border-radius:12px;
-margin-top:8px;
-font-size:15px;
-box-sizing:border-box;
-}
-
-.form-group{
-margin-bottom:18px;
-}
-
-.grid-form{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.upload-box{
-background:#f8f8f8;
-padding:18px;
-border-radius:14px;
-}
-
-.draft-btn,
-.submit-btn,
-.print-btn{
-padding:14px 24px;
-border:none;
-border-radius:50px;
-font-weight:bold;
-cursor:pointer;
-margin-right:10px;
-margin-top:10px;
-}
-
-.draft-btn{
-background:#ffd54a;
-}
-
-.submit-btn{
-background:#0f9d58;
-color:white;
-}
-
-.print-btn{
-background:#2563eb;
-color:white;
 }
 
 /* ===== BROSUR ===== */
@@ -250,10 +154,6 @@ font-size:22px;
 .angka{
 padding:8px 12px;
 min-width:60px;
-}
-
-.grid-form{
-grid-template-columns:1fr;
 }
 
 }
@@ -358,608 +258,21 @@ Klik brosur untuk memperbesar
 
 </div>
 
-<!-- FORMULIR -->
-
 <div class="box">
 
-<h2>Formulir Pendaftaran Online</h2>
+<h2>Daftar Online</h2>
 
-<p style="margin-bottom:25px;">
-Silakan isi formulir dengan lengkap dan benar
+<p>
+Isi formulir pendaftaran secara online dengan mudah
 </p>
 
-<form id="formSPMB" class="form-spmb">
-
-<!-- ===================== -->
-<!-- A DATA SISWA -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-A. Data Calon Peserta Didik
-</h3>
-
-<div class="grid-form">
-
-<div class="form-group">
-<label>Nama Lengkap</label>
-<input type="text" name="nama" required>
-</div>
-
-<div class="form-group">
-<label>Nama Panggilan</label>
-<input type="text" name="panggilan">
-</div>
-
-<div class="form-group">
-<label>Jenis Kelamin</label>
-
-<select name="jk">
-<option>Laki-laki</option>
-<option>Perempuan</option>
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Tempat Lahir</label>
-<input type="text" name="tempat">
-</div>
-
-<div class="form-group">
-<label>Tanggal Lahir</label>
-<input type="date" name="tanggal">
-</div>
-
-<div class="form-group">
-<label>NIK</label>
-<input type="text" name="nik">
-</div>
-
-<div class="form-group">
-<label>NISN</label>
-<input type="text" name="nisn">
-</div>
-
-<div class="form-group">
-<label>Agama</label>
-
-<select
-name="agama"
-onchange="toggleInput(this,'agamaLainnya')"
+<a 
+href="https://forms.gle/Lwj21sbvqZpv3UbU6"
+target="_blank"
+class="btn-daftar"
 >
-<option value="">Pilih Agama</option>
-<option>Islam</option>
-<option>Kristen</option>
-<option>Katolik</option>
-<option>Hindu</option>
-<option>Buddha</option>
-<option>Konghucu</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="agamaLainnya"
-placeholder="Tulis agama lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Anak Ke</label>
-<input type="number" name="anakKe">
-</div>
-
-<div class="form-group">
-<label>Status Dalam Keluarga</label>
-
-<select name="statusKeluarga">
-<option>Anak Kandung</option>
-<option>Anak Tiri</option>
-<option>Anak Angkat</option>
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Jumlah Saudara Kandung</label>
-<input type="number" name="saudaraKandung">
-</div>
-
-<div class="form-group">
-<label>Jumlah Saudara Tiri</label>
-<input type="number" name="saudaraTiri">
-</div>
-
-<div class="form-group">
-<label>Jumlah Saudara Angkat</label>
-<input type="number" name="saudaraAngkat">
-</div>
-
-<div class="form-group">
-<label>No HP / WhatsApp</label>
-<input type="text" name="hp">
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Alamat Tempat Tinggal</label>
-<textarea rows="4" name="alamat"></textarea>
-</div>
-
-<!-- ===================== -->
-<!-- B SEKOLAH ASAL -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-B. Sekolah Asal
-</h3>
-
-<div class="grid-form">
-
-<div class="form-group">
-<label>Masuk Sebagai</label>
-
-<select name="masukSebagai">
-<option>Siswa Baru Kelas X</option>
-<option>Siswa Pindahan</option>
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Nama Sekolah Asal</label>
-<input type="text" name="sekolahAsal">
-</div>
-
-<div class="form-group">
-<label>Tahun Lulus</label>
-<input type="text" name="tahunLulus">
-</div>
-
-<div class="form-group">
-<label>NPSN Sekolah Asal</label>
-<input type="text" name="npsn">
-</div>
-
-<div class="form-group">
-<label>Nomor Ijazah / SKL</label>
-<input type="text" name="ijazah">
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Alamat Sekolah Asal</label>
-<textarea rows="4" name="alamatSekolah"></textarea>
-</div>
-
-<!-- ===================== -->
-<!-- C BAKAT -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-C. Bakat dan Minat
-</h3>
-
-<div class="grid-form">
-
-<div class="form-group">
-<label>Hobi</label>
-<input type="text" name="hobi">
-</div>
-
-<div class="form-group">
-<label>Bidang Studi Favorit</label>
-<input type="text" name="bidang">
-</div>
-
-<div class="form-group">
-<label>Olahraga Favorit</label>
-<input type="text" name="olahraga">
-</div>
-
-<div class="form-group">
-<label>Cita-cita</label>
-<input type="text" name="cita">
-</div>
-
-</div>
-
-<!-- ===================== -->
-<!-- D AYAH -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-D. Data Ayah
-</h3>
-
-<div class="grid-form">
-
-<div class="form-group">
-<label>Nama Lengkap Ayah</label>
-<input type="text" name="namaAyah">
-</div>
-
-<div class="form-group">
-<label>Tempat Lahir Ayah</label>
-<input type="text" name="tempatAyah">
-</div>
-
-<div class="form-group">
-<label>Tanggal Lahir Ayah</label>
-<input type="date" name="tanggalAyah">
-</div>
-
-<div class="form-group">
-<label>Agama Ayah</label>
-
-<select onchange="toggleInput(this,'agamaAyahLainnya')">
-<option value="">Pilih Agama</option>
-<option>Islam</option>
-<option>Kristen</option>
-<option>Katolik</option>
-<option>Hindu</option>
-<option>Buddha</option>
-<option>Konghucu</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="agamaAyahLainnya"
-placeholder="Tulis agama lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Pekerjaan Ayah</label>
-
-<select onchange="toggleInput(this,'pekerjaanAyahLainnya')">
-<option value="">Pilih Pekerjaan</option>
-<option>PNS/ASN</option>
-<option>TNI/Polri</option>
-<option>Guru/Dosen</option>
-<option>Pegawai Swasta</option>
-<option>Wiraswasta/Wirausaha</option>
-<option>Petani</option>
-<option>Pedagang</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="pekerjaanAyahLainnya"
-placeholder="Tulis pekerjaan lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Penghasilan Ayah</label>
-
-<select onchange="toggleInput(this,'penghasilanAyahLainnya')">
-<option value="">Pilih Penghasilan</option>
-<option>< Rp 1.000.000</option>
-<option>Rp 1.000.000 - Rp 2.000.000</option>
-<option>> Rp 2.000.000</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="penghasilanAyahLainnya"
-placeholder="Tulis penghasilan lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Status Ayah</label>
-
-<select name="statusAyah">
-<option>Masih Hidup</option>
-<option>Meninggal</option>
-</select>
-
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Alamat Ayah</label>
-<textarea rows="4" name="alamatAyah"></textarea>
-</div>
-
-<!-- ===================== -->
-<!-- E IBU -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-E. Data Ibu
-</h3>
-
-<div class="grid-form">
-
-<div class="form-group">
-<label>Nama Lengkap Ibu</label>
-<input type="text" name="namaIbu">
-</div>
-
-<div class="form-group">
-<label>Tempat Lahir Ibu</label>
-<input type="text" name="tempatIbu">
-</div>
-
-<div class="form-group">
-<label>Tanggal Lahir Ibu</label>
-<input type="date" name="tanggalIbu">
-</div>
-
-<div class="form-group">
-<label>Agama Ibu</label>
-
-<select onchange="toggleInput(this,'agamaIbuLainnya')">
-<option value="">Pilih Agama</option>
-<option>Islam</option>
-<option>Kristen</option>
-<option>Katolik</option>
-<option>Hindu</option>
-<option>Buddha</option>
-<option>Konghucu</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="agamaIbuLainnya"
-placeholder="Tulis agama lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Pekerjaan Ibu</label>
-
-<select onchange="toggleInput(this,'pekerjaanIbuLainnya')">
-<option value="">Pilih Pekerjaan</option>
-<option>PNS/ASN</option>
-<option>TNI/Polri</option>
-<option>Guru/Dosen</option>
-<option>Pegawai Swasta</option>
-<option>Wiraswasta/Wirausaha</option>
-<option>Petani</option>
-<option>Pedagang</option>
-<option>Ibu Rumah Tangga</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="pekerjaanIbuLainnya"
-placeholder="Tulis pekerjaan lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Penghasilan Ibu</label>
-
-<select onchange="toggleInput(this,'penghasilanIbuLainnya')">
-<option value="">Pilih Penghasilan</option>
-<option>< Rp 1.000.000</option>
-<option>Rp 1.000.000 - Rp 2.000.000</option>
-<option>> Rp 2.000.000</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="penghasilanIbuLainnya"
-placeholder="Tulis penghasilan lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Status Ibu</label>
-
-<select name="statusIbu">
-<option>Masih Hidup</option>
-<option>Meninggal</option>
-</select>
-
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Alamat Ibu</label>
-<textarea rows="4" name="alamatIbu"></textarea>
-</div>
-
-<!-- ===================== -->
-<!-- F WALI -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-F. Data Wali
-</h3>
-
-<div class="grid-form">
-
-<div class="form-group">
-<label>Nama Lengkap Wali</label>
-<input type="text" name="namaWali">
-</div>
-
-<div class="form-group">
-<label>Jenis Kelamin Wali</label>
-
-<select name="jkWali">
-<option>Laki-laki</option>
-<option>Perempuan</option>
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Tempat Lahir Wali</label>
-<input type="text" name="tempatWali">
-</div>
-
-<div class="form-group">
-<label>Tanggal Lahir Wali</label>
-<input type="date" name="tanggalWali">
-</div>
-
-<div class="form-group">
-<label>Agama Wali</label>
-
-<select onchange="toggleInput(this,'agamaWaliLainnya')">
-<option value="">Pilih Agama</option>
-<option>Islam</option>
-<option>Kristen</option>
-<option>Katolik</option>
-<option>Hindu</option>
-<option>Buddha</option>
-<option>Konghucu</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="agamaWaliLainnya"
-placeholder="Tulis agama lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Pekerjaan Wali</label>
-
-<select onchange="toggleInput(this,'pekerjaanWaliLainnya')">
-<option value="">Pilih Pekerjaan</option>
-<option>PNS/ASN</option>
-<option>TNI/Polri</option>
-<option>Guru/Dosen</option>
-<option>Pegawai Swasta</option>
-<option>Wiraswasta/Wirausaha</option>
-<option>Petani</option>
-<option>Pedagang</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="pekerjaanWaliLainnya"
-placeholder="Tulis pekerjaan lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-<div class="form-group">
-<label>Penghasilan Wali</label>
-
-<select onchange="toggleInput(this,'penghasilanWaliLainnya')">
-<option value="">Pilih Penghasilan</option>
-<option>< Rp 1.000.000</option>
-<option>Rp 1.000.000 - Rp 2.000.000</option>
-<option>> Rp 2.000.000</option>
-<option value="Lainnya">Lainnya</option>
-</select>
-
-<input
-type="text"
-id="penghasilanWaliLainnya"
-placeholder="Tulis penghasilan lainnya"
-style="display:none;margin-top:10px;"
->
-
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Alamat Wali</label>
-<textarea rows="4" name="alamatWali"></textarea>
-</div>
-<!-- ===================== -->
-<!-- G UPLOAD -->
-<!-- ===================== -->
-
-<h3 class="section-title">
-G. Upload Berkas Persyaratan
-</h3>
-
-<div class="grid-form">
-
-<div class="upload-box">
-<label>Ijazah / SKL</label>
-<input type="file" name="ijazah">
-</div>
-
-<div class="upload-box">
-<label>Akta Kelahiran</label>
-<input type="file" name="akta">
-</div>
-
-<div class="upload-box">
-<label>Raport Terakhir</label>
-<input type="file" name="raport">
-</div>
-
-<div class="upload-box">
-<label>Kartu PIP</label>
-<input type="file" name="pip">
-</div>
-
-<div class="upload-box">
-<label>Pass Foto</label>
-<input type="file" name="foto">
-</div>
-
-</div>
-
-<div style="margin-top:35px;">
-
-<button
-type="button"
-class="draft-btn"
-onclick="saveDraft()"
->
-Simpan Draft
-</button>
-
-<button
-type="submit"
-class="submit-btn"
->
-Kirim Pendaftaran
-</button>
-
-<button
-type="button"
-class="print-btn"
-onclick="window.print()"
->
-Cetak Bukti
-</button>
-
-</div>
-
-</form>
+Daftar Sekarang
+</a>
 
 </div>
 
@@ -983,7 +296,7 @@ Chat WhatsApp
 
 </section>
 
-<footer style="text-align:center;padding:30px 20px;">
+<footer>
 © 2026 MA Khairussa'adah Kubu
 </footer>
 
@@ -1023,42 +336,6 @@ function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
 
-// ===== SAVE DRAFT =====
-
-function saveDraft(){
-alert("Draft berhasil disimpan");
-}
-
-// ===== TOGGLE INPUT LAINNYA =====
-
-function toggleInput(select,id){
-
-const input = document.getElementById(id);
-
-if(select.value === "Lainnya"){
-input.style.display = "block";
-}else{
-input.style.display = "none";
-input.value = "";
-}
-
-}
-
-// ===== ZOOM =====
-
-function zoomBrosur(src){
-
-document.getElementById("zoomBox").style.display = "flex";
-document.getElementById("zoomImg").src = src;
-
-}
-
-function closeZoom(){
-
-document.getElementById("zoomBox").style.display = "none";
-
-}
-
 // ===== COUNTDOWN =====
 
 const gel1Mulai = new Date("June 22, 2026 08:00:00").getTime();
@@ -1078,6 +355,8 @@ setInterval(function(){
 const now = new Date().getTime();
 
 let text = "";
+
+// GEL 1
 
 if(now < gel1Mulai){
 
@@ -1110,11 +389,15 @@ Detik
 
 }
 
+// GEL 1 ACTIVE
+
 else if(now >= gel1Mulai && now <= gel1Akhir){
 
 text = "🔥 Gelombang 1 Sedang Dibuka";
 
 }
+
+// MENUJU GEL 2
 
 else if(now < gel2Mulai){
 
@@ -1147,11 +430,15 @@ Detik
 
 }
 
+// GEL 2 ACTIVE
+
 else if(now >= gel2Mulai && now <= gel2Akhir){
 
 text = "🟢 Gelombang 2 Sedang Dibuka";
 
 }
+
+// CLOSED
 
 else{
 
@@ -1163,140 +450,21 @@ el.innerHTML = text;
 
 },1000);
 
-// ===== FORM SUBMIT =====
+// ===== ZOOM =====
 
-document.getElementById("formSPMB").addEventListener("submit", async function(e){
+function zoomBrosur(src){
 
-e.preventDefault();
+document.getElementById("zoomBox").style.display="flex";
 
-const form = e.target;
-
-const submitBtn = document.querySelector(".submit-btn");
-
-submitBtn.disabled = true;
-submitBtn.innerHTML = "Mengirim...";
-
-// ===== CONVERT FILE =====
-
-async function toBase64(file){
-
-return new Promise((resolve,reject)=>{
-
-const reader = new FileReader();
-
-reader.readAsDataURL(file);
-
-reader.onload = () => {
-resolve(reader.result.split(",")[1]);
-};
-
-reader.onerror = error => reject(error);
-
-});
+document.getElementById("zoomImg").src=src;
 
 }
 
-// ===== FILE =====
+function closeZoom(){
 
-const ijazahFile = form.ijazah.files[0];
-const aktaFile = form.akta.files[0];
-const raportFile = form.raport.files[0];
-const pipFile = form.pip.files[0];
-const fotoFile = form.foto.files[0];
-
-// ===== NOMOR PENDAFTARAN =====
-
-const nomor = "SPMB-" + Date.now();
-
-// ===== DATA =====
-
-const data = {
-
-nomor: nomor,
-
-nama: form.nama.value,
-panggilan: form.panggilan.value,
-jk: form.jk.value,
-tempat: form.tempat.value,
-tanggal: form.tanggal.value,
-nik: form.nik.value,
-nisn: form.nisn.value,
-hp: form.hp.value,
-alamat: form.alamat.value,
-
-sekolahAsal: form.sekolahAsal.value,
-tahunLulus: form.tahunLulus.value,
-npsn: form.npsn.value,
-
-namaAyah: form.namaAyah.value,
-namaIbu: form.namaIbu.value,
-namaWali: form.namaWali.value,
-
-ijazahName: ijazahFile?.name || "",
-ijazahType: ijazahFile?.type || "",
-ijazahData: ijazahFile ? await toBase64(ijazahFile) : "",
-
-aktaName: aktaFile?.name || "",
-aktaType: aktaFile?.type || "",
-aktaData: aktaFile ? await toBase64(aktaFile) : "",
-
-raportName: raportFile?.name || "",
-raportType: raportFile?.type || "",
-raportData: raportFile ? await toBase64(raportFile) : "",
-
-pipName: pipFile?.name || "",
-pipType: pipFile?.type || "",
-pipData: pipFile ? await toBase64(pipFile) : "",
-
-fotoName: fotoFile?.name || "",
-fotoType: fotoFile?.type || "",
-fotoData: fotoFile ? await toBase64(fotoFile) : ""
-
-};
-
-// ===== SEND =====
-
-const body = new URLSearchParams();
-body.append("data", JSON.stringify(data));
-
-try{
-
-const response = await fetch(
-"https://script.google.com/macros/s/AKfycbzs75x4_uz1b5ojoPcWYN5wGl5NpssytgDnIHtclrU754nDmxyXCpqqAPKcciK5M-Sw/exec",
-{
-method:"POST",
-body:body
-}
-);
-
-const result = await response.json();
-
-if(result.result === "success"){
-
-alert(
-"Pendaftaran berhasil dikirim\n\nNomor Pendaftaran:\n" + nomor
-);
-
-form.reset();
-
-}else{
-
-alert("Gagal mengirim data");
+document.getElementById("zoomBox").style.display="none";
 
 }
-
-}catch(error){
-
-console.log(error);
-
-alert("Terjadi kesalahan saat mengirim");
-
-}
-
-submitBtn.disabled = false;
-submitBtn.innerHTML = "Kirim Pendaftaran";
-
-});
 
 </script>
 
